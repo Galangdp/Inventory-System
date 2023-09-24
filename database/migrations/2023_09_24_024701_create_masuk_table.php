@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('masuk', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_barang') -> unsigned(); //relasi ruangan sebagai penyimpanan
+            $table->unsignedBigInteger('id_barang'); //relasi ruangan sebagai penyimpanan
             $table->string('keterangan');
             $table->char('qty');
 
-            $table->foreign('id_barang') -> on('barang') -> references('id') -> onDelete('cascade');
-
+            $table->foreign('id_barang') -> references('id') -> on('barang') -> onDelete('cascade');
+            
             $table->timestamps();
         });
     }
