@@ -25,6 +25,10 @@
   <link rel="stylesheet" href="./template/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="./template/plugins/summernote/summernote-bs4.min.css">
+    <!-- DataTables -->
+  <link rel="stylesheet" href="./template/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="./template/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="./template/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -208,7 +212,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -226,7 +230,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="{{ route('barang.add_view') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambahkan Barang</p>
                 </a>
@@ -246,10 +250,10 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('barang.index') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Stock
+                Stock Barang
                 <!-- <span class="right badge badge-danger">New</span> -->
               </p>
             </a>
@@ -263,6 +267,8 @@
 
   <!-- Content Wrapper. Contains page content -->
   @yield('dashboard')
+  @yield('barang-index')
+  @yield('add-barang')
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
@@ -314,5 +320,53 @@
 <script src="./template/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="./template/dist/js/pages/dashboard.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="./template/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="./template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="./template/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="./template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="./template/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="./template/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="./template/plugins/jszip/jszip.min.js"></script>
+<script src="./template/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="./template/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="./template/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="./template/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="./template/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+<!-- Page specific no button -->
+<script>
+  $(function () {
+    $("#example3").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example4').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 </body>
 </html>

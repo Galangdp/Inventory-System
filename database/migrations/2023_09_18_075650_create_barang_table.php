@@ -24,7 +24,7 @@ return new class extends Migration
             $table->char('total');
             $table->string('rak');
             $table->string('kondisi');
-            $table->string('ex-project')->nullable();
+            $table->string('ex_project')->nullable();
             $table->timestamps();
         });
     }
