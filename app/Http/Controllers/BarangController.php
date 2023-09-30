@@ -41,7 +41,7 @@ class BarangController extends Controller
             'barang' => $barang
         ];
 
-        return view('pages.barang.edit', $data);
+        return view('pages.barang.edit-barang', $data);
     }
 
     public function update(Request $request, $id){
@@ -51,10 +51,20 @@ class BarangController extends Controller
         return redirect()->route('barang.index');
     }
 
-    public function destroy($id){
+    public function delete($id){
         $barang = Barang::find($id);
-        $barang->delete();
+        $barang->delete($id);
         return redirect()->route('barang.index');
+    }
+
+    public function detail($id){
+        $barang = Barang::find($id);
+
+        $data = [
+            'barang' => $barang
+        ];
+
+        return view('pages.barang.detail-barang', $data);
     }
         
 }
