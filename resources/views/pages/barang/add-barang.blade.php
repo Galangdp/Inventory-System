@@ -35,130 +35,126 @@
               <form action="{{ route ('barang.create') }}" method="POST">
                 @csrf
                 <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="-">Nama Barang</label>
-                        <input name="nama_barang" class="form-control" id="exampleInputEmail1" placeholder="Nama Barang">
-                       </div>
-                    </div>
-                    <div class="col-md-2">
-                      <div class="form-group">
-                        <label for="-">Kode Barang</label>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                          </div>
-                          <input name="kode_barang" class="form-control" placeholder="Kode Barang">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Type</label>
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-bolt"></i></span>
-                          </div>
-                          <input name="type" class="form-control" placeholder="Type">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Brand</label>
-                        <input name="brand" class="form-control" id="exampleInputPassword1" placeholder="Nama Brand">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                          <label for="exampleInputPassword1">Qty</label>
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><i class="fas fa-box"></i></span>
-                            </div>
-                            <input name="qty" class="form-control" placeholder="Qty">
-                          </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Price</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
-                              </div>
-                              <input name="price" class="form-control" placeholder="Price">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="nama_barang">Nama Barang</label>
+                                <input name="nama_barang" class="form-control" id="nama_barang" placeholder="Nama Barang">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Discount</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-percentage"></i></span>
-                              </div>
-                              <input name="discount" class="form-control" placeholder="Discount">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="kode_barang">Kode Barang</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    </div>
+                                    <input name="kode_barang" class="form-control" id="kode_barang" placeholder="Kode Barang">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="type">Type</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-bolt"></i></span>
+                                    </div>
+                                    <input name="type" id="type" class="form-control" placeholder="Type">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="brand">Brand</label>
+                                <input name="brand" class="form-control" id="brand" placeholder="Nama Brand">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="qty">Qty</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-box"></i></span>
+                                    </div>
+                                    <input name="qty" class="form-control" id="qty" placeholder="Qty">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                    </div>
+                                    <input name="price" class="form-control" id="price" placeholder="Price">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="disc">Discount</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-percentage"></i></span>
+                                    </div>
+                                    <input name="disc" class="form-control" id="disc" placeholder="Discount">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="after_disc">After Disc</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-tags"></i></span>
+                                    </div>
+                                    <input name="after_disc" class="form-control" id="after_disc" placeholder="After Disc">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="total">Total</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-money-bill-wave-alt"></i></span>
+                                    </div>
+                                    <input name="total" class="form-control" id="total" placeholder="Total">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="rak">Rak</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-warehouse"></i></span>
+                                    </div>
+                                    <input name="rak" class="form-control" id="rak" placeholder="Rak">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="kondisi">Kondisi</label>
+                                <input name="kondisi" class="form-control" id="kondisi" placeholder="Kondisi">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="ex_project">Ex Project</label>
+                                <input name="ex_project" class="form-control" id="ex_project" placeholder="Ex Project">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">After Disc</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-tags"></i></span>
-                              </div>
-                              <input name="after_disc" class="form-control" placeholder="After Disc">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Total</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-money-bill-wave-alt"></i></span>
-                              </div>
-                              <input name="total" class="form-control" placeholder="Total">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Rak</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-warehouse"></i></span>
-                              </div>
-                              <input name="rak" class="form-control" placeholder="Rak">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Kondisi</label>
-                        <input name="kondisi" class="form-control" id="exampleInputPassword1" placeholder="Kondisi">
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Ex Project</label>
-                        <input name="ex_project" class="form-control" id="exampleInputPassword1" placeholder="Ex Project">
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <!-- <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div> -->
                 </div>
+
                 <!-- /.card-body -->
 
                 <div class="card-footer d-flex justify-content-center align-items-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             </div>
@@ -189,6 +185,7 @@
                       <th>Rak</th>
                       <th>Kondisi</th>
                       <th>Ex Project</th>
+                      <th>Tanggal</th>
                       <th>Action</th>
                     </tr>
                     </thead>
@@ -207,6 +204,7 @@
                         <td>{{$row -> rak}}</td>
                         <td>{{$row -> kondisi}}</td>
                         <td>{{$row -> ex_project}}</td>
+                        <td>{{ $row-> created_at ->format('F d, Y') }}</td>
                         <td>
                         <form action="{{route('barang.delete', $row->id)}}" method="POST" onsubmit="return confirm('Yakin Menghapus?')" method="post">
                           @csrf
@@ -233,6 +231,7 @@
                       <th>Rak</th>
                       <th>Kondisi</th>
                       <th>Ex Project</th>
+                      <th>Tanggal</th>
                       <th>Action</th>
                     </tr>
                     </tfoot>

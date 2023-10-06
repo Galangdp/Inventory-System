@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Barang;
+use App\Models\Masuk;
 
 class BarangController extends Controller
 {
@@ -12,9 +13,11 @@ class BarangController extends Controller
     public function index(){
 
         $barang = Barang::all();
+        $masuk = Masuk::all();
 
         $data = [
-            'barang' => $barang
+            'barang' => $barang,
+            'masuk' => $masuk
         ];
         return view('pages.barang.index', $data);
     }

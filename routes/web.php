@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\MasukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +23,17 @@ Route::name('barang.')->group(function () {
     Route::get('/stock-barang',[BarangController::class, 'index'])->name('index');
     Route::get('/add-barang-view',[BarangController::class, 'add_view'])->name('add_view');
     Route::post('/add-barang',[BarangController::class, 'create'])->name('create');
-    Route::get('/edit-barang/{id}',[BarangController::class, 'edit_view'])->name('edit_view');
-    Route::get('/update-barang',[BarangController::class, 'update'])->name('update');
-    Route::delete('/delete-barang/{id}',[BarangController::class, 'delete'])->name('delete');
     Route::get('/detail-barang/{id}',[BarangController::class, 'detail'])->name('detail');
+    Route::get('/edit-barang/{id}',[BarangController::class, 'edit_view'])->name('edit_view');
+    Route::post('/update-barang/{id}',[BarangController::class, 'update'])->name('update');
+    Route::delete('/delete-barang/{id}',[BarangController::class, 'delete'])->name('delete');
+});
+
+Route::name('masuk.')->group(function () {
+    Route::get('/barang-masuk-view',[MasukController::class, 'index'])->name('index');
+    Route::post('/barang-masuk',[MasukController::class, 'create'])->name('create');
+    Route::get('/detail-barang-masuk/{id}',[MasukController::class, 'detail'])->name('detail');
+    Route::get('/edit-barang-masuk/{id}',[MasukController::class, 'edit_view'])->name('edit_view');
+    Route::post('/update-barang-masuk/{id}',[MasukController::class, 'update'])->name('update');
+    Route::delete('/delete-barang-masuk/{$id}',[MasukController::class, 'delete'])->name('delete');
 });

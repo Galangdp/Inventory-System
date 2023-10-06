@@ -23,29 +23,30 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 mb-3">
             <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">DataTable with default features</h3>
+                  <h3 class="card-title">Barang</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
-                    <tr>
-                      <th>Nama Barang</th>
-                      <th>Kode Barang</th>
-                      <th>Type</th>
-                      <th>Brand</th>
-                      <th>Qty</th>
-                      <th>Price</th>
-                      <th>Disc</th>
-                      <th>After Disc</th>
-                      <th>Total</th>
-                      <th>Rak</th>
-                      <th>Kondisi</th>
-                      <th>Ex Project</th>
-                    </tr>
+                      <tr>
+                        <th>Nama Barang</th>
+                        <th>Kode Barang</th>
+                        <th>Type</th>
+                        <th>Brand</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Disc</th>
+                        <th>After Disc</th>
+                        <th>Total</th>
+                        <th>Rak</th>
+                        <th>Kondisi</th>
+                        <th>Ex Project</th>
+                        <th>Tanggal</th>
+                      </tr>
                     </thead>
                     <tbody>
                       @foreach($barang as $row)
@@ -62,6 +63,7 @@
                         <td>{{$row -> rak}}</td>
                         <td>{{$row -> kondisi}}</td>
                         <td>{{$row -> ex_project}}</td>
+                        <td>{{ $row-> created_at -> format('F d, Y') }}</td>
                       </tr>
                       @endforeach
                     </tbody>
@@ -79,6 +81,7 @@
                       <th>Rak</th>
                       <th>Kondisi</th>
                       <th>Ex Project</th>
+                      <th>Tanggal</th>
                     </tr>
                     </tfoot>
                   </table>
@@ -87,7 +90,49 @@
               </div>
               <!-- /.card -->
             </div>
+          </div>
           <!-- /.col -->
+          <div class="col-md-12">
+            <!-- Form Element sizes -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Barang Masuk</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                      <th>Nama Barang</th>
+                      <th>Keterangan</th>
+                      <th>Qty</th>
+                      <th>Tanggal</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      @foreach($masuk as $row)
+                      <tr>
+                        <td>{{$row -> barang -> nama_barang}}</td>
+                        <td>{{$row -> keterangan}}</td>
+                        <td>{{$row -> qty}}</td>
+                        <td>{{ $row-> created_at -> format('F d, Y') }}</td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>Nama Barang</th>
+                        <th>Keterangan</th>
+                        <th>Qty</th>
+                        <th>Tanggal</th>
+                    </tr>
+                    </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
         </div>
         <!-- /.row -->
       </div>
