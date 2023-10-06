@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\MasukController;
+use App\Http\Controllers\KeluarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +37,13 @@ Route::name('masuk.')->group(function () {
     Route::get('/edit-barang-masuk/{id}',[MasukController::class, 'edit_view'])->name('edit_view');
     Route::post('/update-barang-masuk/{id}',[MasukController::class, 'update'])->name('update');
     Route::delete('/delete-barang-masuk/{$id}',[MasukController::class, 'delete'])->name('delete');
+});
+
+Route::name('keluar.')->group(function () {
+    Route::get('/barang-keluar-view',[KeluarController::class, 'index'])->name('index');
+    Route::post('/barang-keluar',[KeluarController::class, 'create'])->name('create');
+    Route::get('/detail-barang-keluar/{id}',[KeluarController::class, 'detail'])->name('detail');
+    Route::get('/edit-barang-keluar/{id}',[KeluarController::class, 'edit_view'])->name('edit_view');
+    Route::post('/update-barang-keluar/{id}',[KeluarController::class, 'update'])->name('update');
+    Route::delete('/delete-barang-keluar/{$id}',[KeluarController::class, 'delete'])->name('delete');
 });

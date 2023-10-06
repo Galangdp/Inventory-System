@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Barang;
 use App\Models\Masuk;
+use App\Models\Keluar;
 
 class BarangController extends Controller
 {
@@ -14,10 +15,12 @@ class BarangController extends Controller
 
         $barang = Barang::all();
         $masuk = Masuk::all();
+        $keluar = Keluar::all();
 
         $data = [
             'barang' => $barang,
-            'masuk' => $masuk
+            'masuk' => $masuk,
+            'keluar' => $keluar
         ];
         return view('pages.barang.index', $data);
     }

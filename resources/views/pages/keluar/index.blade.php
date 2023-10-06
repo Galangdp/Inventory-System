@@ -1,13 +1,13 @@
 @extends('partials.main')
 
-@section('edit-barang-masuk')
+@section('barang-keluar')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Edit Barang {{$masuk -> barang -> nama_barang}}</h1>
+            <h1>Add Barang Keluar</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -28,11 +28,11 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Barang Masuk</h3>
+                <h3 class="card-title">Barang Keluar</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ route ('masuk.update', $masuk -> id)}}" method="POST">
+              <form action="{{ route ('keluar.create') }}" method="POST">
                 @csrf
                 <div class="card-body">
                     <div class="row">
@@ -54,28 +54,83 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-box"></i></span>
                                     </div>
-                                    <input name="qty" class="form-control" id="qty" value="{{$masuk -> qty}}">
+                                    <input name="qty" class="form-control" id="qty" placeholder="Qty">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">
                             <label for="keterangan">Keterangan</label>
-                            <textarea class="form-control" rows="5" name="keterangan" id="keterangan">{{$masuk -> keterangan}}</textarea>
+                            <textarea class="form-control" rows="5" name="keterangan" placeholder="Enter ..." id="keterangan"></textarea>
                           </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- /.card-body -->
 
                 <div class="card-footer d-flex justify-content-center align-items-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             </div>
             <!-- /.card -->
           </div>
           <!--/.col (left) -->
+          <!-- right column -->
+          <div class="col-md-12">
+            <!-- Form Element sizes -->
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Data Barang</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example3" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                      <th>Nama Barang</th>
+                      <th>Keterangan</th>
+                      <th>Qty</th>
+                      <th>Tanggal</th>
+                      <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      @foreach($keluar as $row)
+                      <tr>
+                        <td>{{$row -> barang -> nama_barang}}</td>
+                        <td>{{$row -> keterangan}}</td>
+                        <td>{{$row -> qty}}</td>
+                        <td>{{ $row-> created_at -> format('F d, Y') }}</td>
+                        <td>
+                          <form action="{{route('keluar.delete', $row->id)}}" method="POST" onsubmit="return confirm('Yakin Menghapus?')" method="post">
+                            @csrf
+                            {{method_field('DELETE')}}
+                            <a href="{{route('keluar.detail', $row->id)}}" type="button" class="btn btn-block btn-primary">Detail</a>
+                            <a href="{{route('keluar.edit_view', $row->id)}}" type="button" class="btn btn-block btn-warning">Edit</a>
+                            <button type="sumbit" class="btn btn-block btn-danger">Delete</button>
+                          </form>
+                        </td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>Nama Barang</th>
+                        <th>Keterangan</th>
+                        <th>Qty</th>
+                        <th>Tanggal</th>
+                        <th>Action</th>
+                    </tr>
+                    </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!--/.col (right) -->
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

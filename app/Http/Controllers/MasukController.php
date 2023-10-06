@@ -29,9 +29,11 @@ class MasukController extends Controller
     
     public function edit_view($id){
         $masuk = Masuk::find($id);
+        $barang = Barang::all();
 
         $data = [
-            'masuk' => $masuk
+            'masuk' => $masuk,
+            'barang' => $barang
         ];
 
         return view('pages.masuk.edit-barang-masuk', $data);
@@ -46,9 +48,11 @@ class MasukController extends Controller
 
     public function detail($id){
         $masuk = Masuk::find($id);
+        $barang = Barang::find($id);
 
         $data = [
-            'masuk' => $masuk
+            'masuk' => $masuk,
+            'barang' => $barang
         ];
 
         return view('pages.masuk.detail-barang-masuk', $data);
