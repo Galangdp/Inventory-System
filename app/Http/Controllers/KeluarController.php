@@ -29,9 +29,11 @@ class KeluarController extends Controller
     
     public function edit_view($id){
         $keluar = Keluar::find($id);
+        $barang = Barang::all();
 
         $data = [
-            'keluar' => $keluar
+            'keluar' => $keluar,
+            'barang' => $barang
         ];
 
         return view('pages.keluar.edit-barang-keluar', $data);
@@ -46,9 +48,11 @@ class KeluarController extends Controller
 
     public function detail($id){
         $keluar = Keluar::find($id);
+        $barang = Barang::find($id);
 
         $data = [
-            'keluar' => $keluar
+            'keluar' => $keluar,
+            'barang' => $barang
         ];
 
         return view('pages.keluar.detail-barang-keluar', $data);

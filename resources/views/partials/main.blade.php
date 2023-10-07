@@ -134,7 +134,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="{{ route ('keluar.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Barang Keluar</p>
                 </a>
@@ -166,6 +166,9 @@
   @yield('barang-masuk')
   @yield('detail-barang-masuk')
   @yield('edit-barang-masuk')
+  @yield('barang-keluar')
+  @yield('detail-barang-keluar')
+  @yield('edit-barang-keluar')
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>

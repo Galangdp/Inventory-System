@@ -92,7 +92,8 @@
                       <th>Nama Barang</th>
                       <th>Keterangan</th>
                       <th>Qty</th>
-                      <th>Tanggal</th>
+                      <th>Tanggal Masuk</th>
+                      <th>Tanggal Update</th>
                       <th>Action</th>
                     </tr>
                     </thead>
@@ -103,6 +104,7 @@
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> qty}}</td>
                         <td>{{ $row-> created_at -> format('F d, Y') }}</td>
+                        <td>{{ $row-> updated_at -> format('F d, Y') }}</td>
                         <td>
                           <form action="{{route('keluar.delete', $row->id)}}" method="POST" onsubmit="return confirm('Yakin Menghapus?')" method="post">
                             @csrf
@@ -120,7 +122,8 @@
                         <th>Nama Barang</th>
                         <th>Keterangan</th>
                         <th>Qty</th>
-                        <th>Tanggal</th>
+                        <th>Tanggal Masuk</th>
+                        <th>Tanggal Update</th>
                         <th>Action</th>
                     </tr>
                     </tfoot>

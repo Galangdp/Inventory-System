@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Barang;
 use App\Models\Masuk;
 use App\Models\Keluar;
+use App\Exports\MasukExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BarangController extends Controller
 {
@@ -71,6 +73,10 @@ class BarangController extends Controller
         ];
 
         return view('pages.barang.detail-barang', $data);
+    }
+
+    public function masuk_export(){
+        return Excel::download(new MasukExport, 'masuk.xlsx');
     }
         
 }
