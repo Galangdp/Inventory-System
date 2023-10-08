@@ -3,7 +3,7 @@
 namespace App\Imports;
 
 use App\Models\Barang;
-use Carbon\Carbon;
+// use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\ToModel;
 
 class BarangImport implements ToModel
@@ -49,4 +49,25 @@ class BarangImport implements ToModel
             // 'updated_at' => $tanggalUpdate, // Ganti dengan nama kolom yang sesuai
         ]);
     }
+
+    // public function headings(): array
+    // {
+    //     return [
+    //         'No',
+    //         'Nama Barang', // Tambahkan kolom ini
+    //         'Kode Barang',
+    //         'Type',
+    //         'Brand',
+    //         'Qty',
+    //         'Price',
+    //         'Disc',
+    //         'After Disc',
+    //         'Total',
+    //         'Rak',
+    //         'Kondisi',
+    //         'Ex Project',
+    //         'Tanggal Masuk',
+    //         'Tanggal Update',
+    //     ];
+    // }
 }
