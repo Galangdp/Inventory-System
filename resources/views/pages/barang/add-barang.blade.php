@@ -148,6 +148,29 @@
                                 <input name="ex_project" class="form-control" id="ex_project" placeholder="Ex Project">
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Tanggal Masuk</label>
+                                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                        <input name="tanggal_masuk" type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Tanggal Update</label>
+                                    <div class="input-group date" id="reservationdate1" data-target-input="nearest">
+                                        <input name="tanggal_update" type="text" class="form-control datetimepicker-input" data-target="#reservationdate1"/>
+                                        <div class="input-group-append" data-target="#reservationdate1" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -185,7 +208,8 @@
                       <th>Rak</th>
                       <th>Kondisi</th>
                       <th>Ex Project</th>
-                      <th>Tanggal</th>
+                      <th>Tanggal Masuk</th>
+                      <th>Tanggal Update</th>
                       <th>Action</th>
                     </tr>
                     </thead>
@@ -204,7 +228,8 @@
                         <td>{{$row -> rak}}</td>
                         <td>{{$row -> kondisi}}</td>
                         <td>{{$row -> ex_project}}</td>
-                        <td>{{ $row-> created_at ->format('F d, Y') }}</td>
+                        <td>{{ $row-> tanggal_masuk}}</td>
+                        <td>{{ $row-> tanggal_update}}</td>
                         <td>
                         <form action="{{route('barang.delete', $row->id)}}" method="POST" onsubmit="return confirm('Yakin Menghapus?')" method="post">
                           @csrf
@@ -231,7 +256,8 @@
                       <th>Rak</th>
                       <th>Kondisi</th>
                       <th>Ex Project</th>
-                      <th>Tanggal</th>
+                      <th>Tanggal Masuk</th>
+                      <th>Tanggal Update</th>
                       <th>Action</th>
                     </tr>
                     </tfoot>

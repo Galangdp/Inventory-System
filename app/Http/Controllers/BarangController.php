@@ -7,6 +7,8 @@ use App\Models\Barang;
 use App\Models\Masuk;
 use App\Models\Keluar;
 use App\Exports\MasukExport;
+use App\Imports\MasukImport;
+use App\Imports\BarangImport;
 use Maatwebsite\Excel\Facades\Excel;
 
 class BarangController extends Controller
@@ -76,7 +78,24 @@ class BarangController extends Controller
     }
 
     public function masuk_export(){
-        return Excel::download(new MasukExport, 'masuk.xlsx');
+        return Excel::download(new MasukExport, 'Masuk.xlsx');
     }
-        
+
+    public function masuk_import(Request $request){
+        $file = $request->file('file');
+        $nama_file = $file->getClientOriginalName();
+        $file->move('BarangMasuk', $nama_file);
+
+        Excel::import(new MasukImport, public_path('/BarangMasuk/'.$nama_file));
+        return redirect()->route('barang.index');
+    }
+
+    public function barang_import(Request $request){
+        $file = $request->file('file');
+        $nama_file = $file->getClientOriginalName();
+        $file->move('Barang', $nama_file);
+
+        Excel::import(new BarangImport, public_path('/Barang/'.$nama_file));
+        return redirect()->route('barang.index');
+    }
 }

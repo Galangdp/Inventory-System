@@ -46,7 +46,8 @@
                         <th>Rak</th>
                         <th>Kondisi</th>
                         <th>Ex Project</th>
-                        <th>Tanggal</th>
+                        <th>Tanggal Masuk</th>
+                        <th>Tanggal Update</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -65,7 +66,10 @@
                         <td>{{$row -> rak}}</td>
                         <td>{{$row -> kondisi}}</td>
                         <td>{{$row -> ex_project}}</td>
-                        <td>{{ $row-> created_at -> format('F d, Y') }}</td>
+                        <td>{{$row -> tanggal_masuk}}</td>
+                        <td>{{$row -> tanggal_update}}</td>
+                        <!-- <td>{{ $row-> created_at }}</td>
+                        <td>{{ $row-> updated_at }}</td> -->
                       </tr>
                       @endforeach
                     </tbody>
@@ -84,10 +88,23 @@
                       <th>Rak</th>
                       <th>Kondisi</th>
                       <th>Ex Project</th>
-                      <th>Tanggal</th>
+                      <th>Tanggal Masuk</th>
+                      <th>Tanggal Update</th>
                     </tr>
                     </tfoot>
                   </table>
+                  <div class="container-fluid">
+                    <div class="row m-4">
+                      <div class="col-md-4">
+
+                      </div>
+                      <div class="col-md-4">
+                        <a data-toggle="modal" data-target="#modal-default-barang" class="btn btn-block btn-success btn-md">Import</a>
+                      </div>
+                      <div class="col-md-4">
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -109,7 +126,7 @@
                         <th colspan="6">Barang Masuk</th>
                     </tr>
                     <tr>
-                      <th>No</th>
+                      <!-- <th>No</th> -->
                       <th>Nama Barang</th>
                       <th>Keterangan</th>
                       <th>Qty</th>
@@ -120,7 +137,7 @@
                     <tbody>
                       @foreach($masuk as $row)
                       <tr>
-                        <td>{{$loop -> iteration}}</td>
+                        <!-- <td>{{$loop -> iteration}}</td> -->
                         <td>{{$row -> barang -> nama_barang}}</td>
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> qty}}</td>
@@ -131,7 +148,7 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <th>No</th>
+                        <!-- <th>No</th> -->
                         <th>Nama Barang</th>
                         <th>Keterangan</th>
                         <th>Qty</th>
@@ -142,7 +159,7 @@
                 </table>
               </div>
               <!-- /.card-body -->
-              <div class="container-fluid">
+              <!-- <div class="container-fluid">
                 <div class="row m-2">
                   <div class="col-md-4">
 
@@ -154,10 +171,9 @@
                     <a data-toggle="modal" data-target="#modal-default-masuk" class="btn btn-block btn-success btn-md">Import</a>
                   </div>
                   <div class="col-md-4">
-                    <!--  -->
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- /.card -->
           </div>
@@ -208,7 +224,7 @@
                 </table>
               </div>
               <!-- /.card-body -->
-              <div class="container-fluid">
+              <!-- <div class="container-fluid">
                 <div class="row m-2">
                   <div class="col-md-4">
 
@@ -221,12 +237,39 @@
 
                   </div>
                   <div class="col-md-4">
-                    <!--  -->
+
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- /.card -->
+          </div>
+          <!-- MODAL Barang -->
+          <div class="modal fade" id="modal-default-barang">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Barang</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="{{ route('barang.barang_import')}}" method="post" enctype="multipart/form-data">
+                      {{ csrf_field() }}
+                      <div class="form-group">
+                        <input type="file" name="file" required="required">
+                      </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Selesai</button>
+                      <button type="submit" class="btn btn-primary">Import</button>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
           </div>
           <!-- MODAL MASUK -->
           <div class="modal fade" id="modal-default-masuk">
@@ -239,17 +282,17 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('barang.masuk_import')}}" method="post" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <div class="form-group">
-                        <input type="file" name="file" required>
+                        <input type="file" name="file" required="required">
                       </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Selesai</button>
-                    <button type="button" class="btn btn-primary">Import</button>
-                  </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Selesai</button>
+                      <button type="submit" class="btn btn-primary">Import</button>
+                    </div>
+                  </form>
                 </div>
                 <!-- /.modal-content -->
             </div>

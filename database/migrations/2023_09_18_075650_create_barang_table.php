@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('rak');
             $table->string('kondisi');
             $table->string('ex_project')->nullable();
+            $table->string('tanggal_masuk')->nullable();
+            $table->string('tanggal_update')->nullable();
             $table->timestamps();
         });
     }

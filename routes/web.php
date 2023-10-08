@@ -28,7 +28,9 @@ Route::name('barang.')->group(function () {
     Route::get('/edit-barang/{id}',[BarangController::class, 'edit_view'])->name('edit_view');
     Route::post('/update-barang/{id}',[BarangController::class, 'update'])->name('update');
     Route::delete('/delete-barang/{id}',[BarangController::class, 'delete'])->name('delete');
+    Route::post('/import-barang',[BarangController::class, 'barang_import'])->name('barang_import');
     Route::get('/export-barang-masuk',[BarangController::class, 'masuk_export'])->name('masuk_export');
+    Route::post('/import-barang-masuk',[BarangController::class, 'masuk_import'])->name('masuk_import');
 });
 
 Route::name('masuk.')->group(function () {
