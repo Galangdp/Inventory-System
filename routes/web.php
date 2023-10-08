@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\MasukController;
 use App\Http\Controllers\KeluarController;
+use App\Http\Controllers\DashboardController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +18,12 @@ use App\Http\Controllers\KeluarController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.dashboard');
+// Route::get('/', function () {
+//     return view('pages.dashboard');
+// });
+
+Route::name('dashboard.')->group(function () {
+    Route::get('/dashboard',[DashboardController::class, 'index'])->name('index');
 });
 
 Route::name('barang.')->group(function () {
