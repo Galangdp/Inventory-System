@@ -84,7 +84,7 @@
           <img src="{{asset ('template/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">PIC</a>
+          <a href="#" class="d-block">{{Auth::user() -> name}}</a>
         </div>
       </div>
 
@@ -150,6 +150,29 @@
               </p>
             </a>
           </li>
+          @if(auth() -> user() -> role == 'admin')
+          <li class="nav-item">
+            <a href="{{ route('auth.toRegister') }}" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                User Register
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          @endif
+          <li class="nav-item">
+            <form action="{{ route ('auth.logout') }}" method="post">
+              @csrf
+              <button type="submit" class="nav-link" style="color: #ffffff;">
+                <i class="nav-icon fas fa-sign-out-alt"></i>
+                <p>
+                  Logout
+                  <!-- <span class="right badge badge-danger">New</span> -->
+                </p>
+              </button>
+            </form>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -169,6 +192,7 @@
   @yield('barang-keluar')
   @yield('detail-barang-keluar')
   @yield('edit-barang-keluar')
+  @yield('register')
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
@@ -438,6 +462,56 @@
   }
   // DropzoneJS Demo Code End
 </script>
+<!-- Login specific script -->
+<script>
+  $(function () {
+    $.validator.setDefaults({
+      submitHandler: function () {
+        alert( "Form successful submitted!" );
+      }
+    });
+    $('#quickForm').validate({
+      rules: {
+        email: {
+          required: true,
+          email: true,
+        },
+        password: {
+          required: true,
+          minlength: 5
+        },
+        terms: {
+          required: true
+        },
+      },
+      messages: {
+        email: {
+          required: "Please enter a email address",
+          email: "Please enter a valid email address"
+        },
+        password: {
+          required: "Please provide a password",
+          minlength: "Your password must be at least 5 characters long"
+        },
+        terms: "Please accept our terms"
+      },
+      errorElement: 'span',
+      errorPlacement: function (error, element) {
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
+      },
+      highlight: function (element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
+      }
+    });
+  });
+</script>
+<!-- jquery-validation -->
+<script src="{{ asset('template/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('template/plugins/jquery-validation/additional-methods.min.js') }}"></script>
 
 </body>
 </html>

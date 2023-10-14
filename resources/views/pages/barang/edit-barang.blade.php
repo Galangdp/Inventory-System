@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">General Form</li>
+              <li class="breadcrumb-item active">Edit Barang</li>
             </ol>
           </div>
         </div>
@@ -148,7 +148,30 @@
                         <input name="ex_project" class="form-control" id="exampleInputPassword1" value="{{$barang -> ex_project}}">
                       </div>
                     </div>
-                  </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                                <label>Tanggal Masuk</label>
+                                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                        <input name="tanggal_masuk" type="text" value="{{$barang -> tanggal_masuk}}" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Tanggal Update</label>
+                                    <div class="input-group date" id="reservationdate1" data-target-input="nearest">
+                                        <input name="tanggal_update" type="text" value="{{$barang -> tanggal_update}}" class="form-control datetimepicker-input" data-target="#reservationdate1"/>
+                                        <div class="input-group-append" data-target="#reservationdate1" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                   
                   <!-- <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">

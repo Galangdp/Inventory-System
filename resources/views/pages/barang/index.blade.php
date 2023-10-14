@@ -115,9 +115,9 @@
           <div class="col-md-12">
             <!-- Form Element sizes -->
             <div class="card">
-              <div class="card-header">
+              <!-- <div class="card-header">
                 <h3 class="card-title">Barang Masuk</h3>
-              </div>
+              </div> -->
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
                 <table id="" class="table-hover table table-bordered table-striped">
@@ -126,7 +126,7 @@
                         <th colspan="6">Barang Masuk</th>
                     </tr>
                     <tr>
-                      <!-- <th>No</th> -->
+                      <th>No</th>
                       <th>Nama Barang</th>
                       <th>Keterangan</th>
                       <th>Qty</th>
@@ -137,7 +137,7 @@
                     <tbody>
                       @foreach($masuk as $row)
                       <tr>
-                        <!-- <td>{{$loop -> iteration}}</td> -->
+                        <td>{{$loop -> iteration}}</td>
                         <td>{{$row -> barang -> nama_barang}}</td>
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> qty}}</td>
@@ -148,7 +148,7 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                        <!-- <th>No</th> -->
+                        <th>No</th>
                         <th>Nama Barang</th>
                         <th>Keterangan</th>
                         <th>Qty</th>
@@ -180,9 +180,9 @@
           <div class="col-md-12">
             <!-- Form Element sizes -->
             <div class="card">
-              <div class="card-header">
+              <!-- <div class="card-header">
                 <h3 class="card-title">Barang keluar</h3>
-              </div>
+              </div> -->
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
                 <table id="" class="table-hover table table-bordered table-striped">

@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">General Form</li>
+              <li class="breadcrumb-item active">Add Barang</li>
             </ol>
           </div>
         </div>
@@ -228,8 +228,8 @@
                         <td>{{$row -> rak}}</td>
                         <td>{{$row -> kondisi}}</td>
                         <td>{{$row -> ex_project}}</td>
-                        <td>{{ $row-> tanggal_masuk}}</td>
-                        <td>{{ $row-> tanggal_update}}</td>
+                        <td>{{ $row -> tanggal_masuk }}</td>
+                        <td>{{ $row-> tanggal_update }}</td>
                         <td>
                         <form action="{{route('barang.delete', $row->id)}}" method="POST" onsubmit="return confirm('Yakin Menghapus?')" method="post">
                           @csrf
