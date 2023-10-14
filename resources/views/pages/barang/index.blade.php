@@ -123,13 +123,14 @@
                 <table id="" class="table-hover table table-bordered table-striped">
                 <thead>
                     <tr class="text-center">
-                        <th colspan="6">Barang Masuk</th>
+                        <th colspan="7">Barang Masuk</th>
                     </tr>
                     <tr>
                       <th>No</th>
                       <th>Nama Barang</th>
                       <th>Keterangan</th>
                       <th>Qty</th>
+                      <th>Pengirim</th>
                       <th>Tanggal Masuk</th>
                       <th>Tanggal Update</th>
                     </tr>
@@ -141,8 +142,11 @@
                         <td>{{$row -> barang -> nama_barang}}</td>
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> qty}}</td>
-                        <td>{{ $row-> created_at -> format('F d, Y') }}</td>
-                        <td>{{ $row-> updated_at -> format('F d, Y') }}</td>
+                        <td>{{$row -> pengirim}}</td>
+                        <td>{{$row -> tanggal_masuk}}</td>
+                        <td>{{$row -> tanggal_update}}</td>
+                        <!-- <td>{{ $row-> created_at -> format('F d, Y') }}</td>
+                        <td>{{ $row-> updated_at -> format('F d, Y') }}</td> -->
                       </tr>
                       @endforeach
                     </tbody>
@@ -152,6 +156,7 @@
                         <th>Nama Barang</th>
                         <th>Keterangan</th>
                         <th>Qty</th>
+                        <th>Pengirim</th>
                         <th>Tanggal Masuk</th>
                         <th>Tanggal Update</th>
                     </tr>
@@ -188,13 +193,14 @@
                 <table id="" class="table-hover table table-bordered table-striped">
                 <thead>
                     <tr class="text-center">
-                        <th colspan="6">Barang keluar</th>
+                        <th colspan="7">Barang keluar</th>
                     </tr>
                     <tr>
                       <th>No</th>
                       <th>Nama Barang</th>
                       <th>Keterangan</th>
                       <th>Qty</th>
+                      <th>Penerima</th>
                       <th>Tanggal Masuk</th>
                       <th>Tanggal Update</th>
                     </tr>
@@ -206,8 +212,11 @@
                         <td>{{$row -> barang -> nama_barang}}</td>
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> qty}}</td>
-                        <td>{{ $row-> created_at -> format('F d, Y') }}</td>
-                        <td>{{ $row-> updated_at -> format('F d, Y') }}</td>
+                        <td>{{$row -> penerima}}</td>
+                        <td>{{$row -> tanggal_masuk}}</td>
+                        <td>{{$row -> tanggal_update}}</td>
+                        <!-- <td>{{ $row-> created_at -> format('F d, Y') }}</td>
+                        <td>{{ $row-> updated_at -> format('F d, Y') }}</td> -->
                       </tr>
                       @endforeach
                     </tbody>
@@ -217,6 +226,7 @@
                         <th>Nama Barang</th>
                         <th>Keterangan</th>
                         <th>Qty</th>
+                        <th>Penerima</th>
                         <th>Tanggal Masuk</th>
                         <th>Tanggal Update</th>
                     </tr>

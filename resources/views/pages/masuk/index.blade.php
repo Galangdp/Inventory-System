@@ -58,6 +58,40 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="pengirim">Pengirim</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-truck"></i></i></span>
+                                    </div>
+                                    <input name="pengirim" class="form-control" id="pengirim" placeholder="Pengirim">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Tanggal Masuk</label>
+                                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                        <input name="tanggal_masuk" type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Tanggal Update</label>
+                                    <div class="input-group date" id="reservationdate1" data-target-input="nearest">
+                                        <input name="tanggal_update" type="text" class="form-control datetimepicker-input" data-target="#reservationdate1"/>
+                                        <div class="input-group-append" data-target="#reservationdate1" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-12">
                           <div class="form-group">
                             <label for="keterangan">Keterangan</label>
@@ -92,6 +126,7 @@
                       <th>Nama Barang</th>
                       <th>Keterangan</th>
                       <th>Qty</th>
+                      <th>Pengirim</th>
                       <th>Tanggal Masuk</th>
                       <th>Tanggal Update</th>
                       <th>Action</th>
@@ -103,8 +138,11 @@
                         <td>{{$row -> barang -> nama_barang}}</td>
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> qty}}</td>
-                        <td>{{ $row-> created_at -> format('F d, Y') }}</td>
-                        <td>{{ $row-> updated_at -> format('F d, Y') }}</td>
+                        <td>{{$row -> pengirim}}</td>
+                        <td>{{$row -> tanggal_masuk}}</td>
+                        <td>{{$row -> tanggal_update}}</td>
+                        <!-- <td>{{ $row-> created_at -> format('F d, Y') }}</td>
+                        <td>{{ $row-> updated_at -> format('F d, Y') }}</td> -->
                         <td>
                           <form action="{{route('masuk.delete', $row->id)}}" method="POST" onsubmit="return confirm('Yakin Menghapus?')" method="post">
                             @csrf
@@ -122,6 +160,7 @@
                         <th>Nama Barang</th>
                         <th>Keterangan</th>
                         <th>Qty</th>
+                        <th>Pengirim</th>
                         <th>Tanggal Masuk</th>
                         <th>Tanggal Update</th>
                         <th>Action</th>
