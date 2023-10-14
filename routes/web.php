@@ -131,7 +131,7 @@ Route::middleware(['auth', 'role:admin,pic'])->group(function(){
         Route::get('/detail-barang-masuk/{id}',[MasukController::class, 'detail'])->name('detail');
         Route::get('/edit-barang-masuk/{id}',[MasukController::class, 'edit_view'])->name('edit_view');
         Route::post('/update-barang-masuk/{id}',[MasukController::class, 'update'])->name('update');
-        Route::delete('/delete-barang-masuk/{$id}',[MasukController::class, 'delete'])->name('delete');
+        Route::delete('/delete-barang-masuk/{id}',[MasukController::class, 'delete'])->name('delete');
     });
 
     Route::name('keluar.')->group(function () {
@@ -140,7 +140,7 @@ Route::middleware(['auth', 'role:admin,pic'])->group(function(){
         Route::get('/detail-barang-keluar/{id}',[KeluarController::class, 'detail'])->name('detail');
         Route::get('/edit-barang-keluar/{id}',[KeluarController::class, 'edit_view'])->name('edit_view');
         Route::post('/update-barang-keluar/{id}',[KeluarController::class, 'update'])->name('update');
-        Route::delete('/delete-barang-keluar/{$id}',[KeluarController::class, 'delete'])->name('delete');
+        Route::delete('/delete-barang-keluar/{id}',[KeluarController::class, 'delete'])->name('delete');
     });
 
     Route::name('dashboard.')->group(function () {
