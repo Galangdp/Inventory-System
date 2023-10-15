@@ -54,7 +54,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-box"></i></span>
                                                 </div>
-                                                <input name="qty" class="form-control" id="qty" placeholder="Qty">
+                                                <input name="qty" class="form-control" id="qty" value="{{$keluar -> qty}}">
                                             </div>
                                         </div>
                                     </div>
@@ -67,7 +67,7 @@
                                                             class="fas fa-box-open"></i></i></span>
                                                 </div>
                                                 <input name="penerima" class="form-control" id="penerima"
-                                                    placeholder="Penerima">
+                                                    value="{{$keluar -> penerima}}">
                                             </div>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
                                                 data-target-input="nearest">
                                                 <input name="tanggal_masuk" type="text"
                                                     class="form-control datetimepicker-input"
-                                                    data-target="#reservationdate" />
+                                                    data-target="#reservationdate" value="{{$keluar -> tanggal_masuk}}" />
                                                 <div class="input-group-append" data-target="#reservationdate"
                                                     data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -93,7 +93,7 @@
                                                 data-target-input="nearest">
                                                 <input name="tanggal_update" type="text"
                                                     class="form-control datetimepicker-input"
-                                                    data-target="#reservationdate1" />
+                                                    data-target="#reservationdate1" value="{{$keluar -> tanggal_update}}" />
                                                 <div class="input-group-append" data-target="#reservationdate1"
                                                     data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="fa fa-calendar"></i>
@@ -105,8 +105,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="keterangan">Keterangan</label>
-                                            <textarea class="form-control" rows="5" name="keterangan"
-                                                placeholder="Enter ..." id="keterangan"></textarea>
+                                            <textarea class="form-control" rows="5" name="keterangan" id="keterangan">{{$keluar -> keterangan}}</textarea>
                                         </div>
                                     </div>
                                 </div>

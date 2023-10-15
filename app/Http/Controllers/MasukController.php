@@ -24,7 +24,7 @@ class MasukController extends Controller
     public function create(Request $request){
         $masuk = $request->all();
         Masuk::create($masuk);
-        return redirect() -> route('masuk.index');
+        return redirect() -> route('barang.index');
     }
     
     public function edit_view($id){
@@ -43,7 +43,7 @@ class MasukController extends Controller
         $input = $request->all();
         $masuk = Masuk::find($id);
         $masuk->update($input);
-        return redirect()->route('masuk.index');
+        return redirect()->route('barang.index');
     }
 
     public function detail($id){
@@ -61,6 +61,6 @@ class MasukController extends Controller
     public function delete($id){
         $masuk = Masuk::find($id);
         $masuk->delete($id);
-        return redirect()->route('masuk.index');
+        return redirect()->route('barang.index');
     }
 }

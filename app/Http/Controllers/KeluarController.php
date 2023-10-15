@@ -24,7 +24,7 @@ class KeluarController extends Controller
     public function create(Request $request){
         $keluar = $request->all();
         Keluar::create($keluar);
-        return redirect() -> route('keluar.index');
+        return redirect() -> route('barang.index');
     }
     
     public function edit_view($id){
@@ -43,7 +43,7 @@ class KeluarController extends Controller
         $input = $request->all();
         $keluar = Keluar::find($id);
         $keluar->update($input);
-        return redirect()->route('keluar.index');
+        return redirect()->route('barang.index');
     }
 
     public function detail($id){
@@ -61,6 +61,6 @@ class KeluarController extends Controller
     public function delete($id){
         $keluar = Keluar::find($id);
         $keluar->delete($id);
-        return redirect()->route('keluar.index');
+        return redirect()->route('barang.index');
     }
 }
