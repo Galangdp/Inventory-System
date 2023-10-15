@@ -19,19 +19,34 @@
                             <td>{{$barang->nama_barang}}</td>
                         </tr>
                         <tr>
-                            <th>Keterangan</th>
-                            <td>:</td>
-                            <td>{{$masuk->keterangan}}</td>
-                        </tr>
-                        <tr>
                             <th>Qty</th>
                             <td>:</td>
                             <td>{{$masuk -> qty}}</td>
                         </tr>
                         <tr>
-                            <th>Tanggal</th>
+                            <th>Jumlah Barang</th>
                             <td>:</td>
-                            <td>{{$masuk -> created_at -> format('F d, Y')}}</td>
+                            <td>{{$masuk -> jumlah_barang}}</td>
+                        </tr>
+                        <tr>
+                            <th>Penerima</th>
+                            <td>:</td>
+                            <td>{{$masuk -> penerima}}</td>
+                        </tr>
+                        <tr>
+                            <th>Tanggal Masuk</th>
+                            <td>:</td>
+                            <td>{{$masuk -> tanggal_masuk}}</td>
+                        </tr>
+                        <tr>
+                            <th>Tanggal Update</th>
+                            <td>:</td>
+                            <td>{{$masuk -> tanggal_update}}</td>
+                        </tr>
+                        <tr>
+                            <th>Keterangan</th>
+                            <td>:</td>
+                            <td>{{$masuk->keterangan}}</td>
                         </tr>
                     </table>
                 </div>

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->char('disc')->nullable();
             $table->char('after_disc')->nullable();
             $table->char('total');
+            $table->char('jumlah_barang')->nullable();
             $table->string('rak');
             $table->string('kondisi');
             $table->string('ex_project')->nullable();

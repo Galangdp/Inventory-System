@@ -23,6 +23,12 @@ class KeluarController extends Controller
 
     public function create(Request $request){
         $keluar = $request->all();
+        
+        // Kurangi jumlah_barang di tabel Barang saat barang keluar
+        $barang = Barang::find($keluar['id_barang']);
+        $barang->jumlah_barang -= $keluar['jumlah_barang'];
+        $barang->save();
+
         Keluar::create($keluar);
         return redirect() -> route('barang.index');
     }

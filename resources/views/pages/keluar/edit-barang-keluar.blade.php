@@ -36,7 +36,7 @@
                             @csrf
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="nama_barang">Nama Barang</label>
                                             <select class="form-control" name="id_barang" id="nama_barang">
@@ -47,7 +47,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="qty">Qty</label>
                                             <div class="input-group">
@@ -55,6 +55,17 @@
                                                     <span class="input-group-text"><i class="fas fa-box"></i></span>
                                                 </div>
                                                 <input name="qty" class="form-control" id="qty" value="{{$keluar -> qty}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="qty">Jumlah Barang</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-list-alt"></i></span>
+                                                </div>
+                                                <input name="jumlah_barang" class="form-control" id="jumlah_barang" value="{{$keluar -> jumlah_barang}}">
                                             </div>
                                         </div>
                                     </div>

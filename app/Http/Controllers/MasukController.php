@@ -23,6 +23,12 @@ class MasukController extends Controller
 
     public function create(Request $request){
         $masuk = $request->all();
+
+        // Tambahkan jumlah_barang di tabel Barang saat barang masuk
+        $barang = Barang::find($masuk['id_barang']);
+        $barang->jumlah_barang += $masuk['jumlah_barang'];
+        $barang->save();
+        
         Masuk::create($masuk);
         return redirect() -> route('barang.index');
     }

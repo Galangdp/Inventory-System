@@ -59,6 +59,11 @@
                             <td>{{$barang -> total}}</td>
                         </tr>
                         <tr>
+                            <th>Jumlah Barang</th>
+                            <td>:</td>
+                            <td>{{$barang -> jumlah_barang}}</td>
+                        </tr>
+                        <tr>
                             <th>Rak</th>
                             <td>:</td>
                             <td>{{$barang -> rak}}</td>

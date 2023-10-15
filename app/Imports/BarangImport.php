@@ -38,11 +38,12 @@ class BarangImport implements ToModel
             'disc' => $row[7], // Ganti dengan nama kolom yang sesuai
             'after_disc' => $row[8], // Ganti dengan nama kolom yang sesuai
             'total' => $row[9], // Ganti dengan nama kolom yang sesuai
-            'rak' => $row[10], // Ganti dengan nama kolom yang sesuai
-            'kondisi' => $row[11], // Ganti dengan nama kolom yang sesuai
-            'ex_project' => $row[12], // Ganti dengan nama kolom yang sesuai
-            'tanggal_masuk' => $row[13], // Ganti dengan nama kolom yang sesuai
-            'tanggal_update' => $row[14], // Ganti dengan nama kolom yang sesuai
+            'jumlah_barang' => $row[10], // Ganti dengan nama kolom yang sesuai
+            'rak' => $row[11], // Ganti dengan nama kolom yang sesuai
+            'kondisi' => $row[12], // Ganti dengan nama kolom yang sesuai
+            'ex_project' => $row[13], // Ganti dengan nama kolom yang sesuai
+            'tanggal_masuk' => $row[14], // Ganti dengan nama kolom yang sesuai
+            'tanggal_update' => $row[15], // Ganti dengan nama kolom yang sesuai
             // 'created_at' => $row[13], // Ganti dengan nama kolom yang sesuai
             // 'updated_at' => $row[14], // Ganti dengan nama kolom yang sesuai
             // 'created_at' => $tanggalMasuk, // Ganti dengan nama kolom yang sesuai

@@ -125,7 +125,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="jumlah_barang">Jumlah Barang</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-list-alt"></i></span>
+                                    </div>
+                                    <input name="jumlah_barang" class="form-control" id="jumlah_barang" value="{{$barang -> jumlah_barang}}">
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label for="exampleInputPassword1">Rak</label>
                             <div class="input-group">
@@ -136,13 +147,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <div class="form-group">
                         <label for="exampleInputPassword1">Kondisi</label>
                         <input name="kondisi" class="form-control" id="exampleInputPassword1" value="{{$barang -> kondisi}}">
                       </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <div class="form-group">
                         <label for="exampleInputPassword1">Ex Project</label>
                         <input name="ex_project" class="form-control" id="exampleInputPassword1" value="{{$barang -> ex_project}}">
