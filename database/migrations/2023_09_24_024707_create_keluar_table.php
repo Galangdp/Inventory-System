@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('qty');
             $table->string('penerima');
             $table->string('tanggal_masuk')->nullable();
-            $table->string('tanggal_update')->nullable();
+            $table->string('tanggal_input')->nullable();
 
             $table->foreign('id_barang') -> references('id') -> on('barang') -> onDelete('cascade');
             
