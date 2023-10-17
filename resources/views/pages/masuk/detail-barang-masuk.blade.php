@@ -39,9 +39,9 @@
                             <td>{{$masuk -> tanggal_masuk}}</td>
                         </tr>
                         <tr>
-                            <th>Tanggal Update</th>
+                            <th>Tanggal Input</th>
                             <td>:</td>
-                            <td>{{$masuk -> tanggal_update}}</td>
+                            <td>{{$masuk -> tanggal_input}}</td>
                         </tr>
                         <tr>
                             <th>Keterangan</th>

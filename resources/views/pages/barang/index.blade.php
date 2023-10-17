@@ -48,7 +48,7 @@
                         <th>Kondisi</th>
                         <th>Ex Project</th>
                         <th>Tanggal Masuk</th>
-                        <th>Tanggal Update</th>
+                        <th>Tanggal Input</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -92,7 +92,7 @@
                       <th>Kondisi</th>
                       <th>Ex Project</th>
                       <th>Tanggal Masuk</th>
-                      <th>Tanggal Update</th>
+                      <th>Tanggal Input</th>
                     </tr>
                     </tfoot>
                   </table>
@@ -126,7 +126,7 @@
                 <table id="" class="table-hover table table-bordered table-striped">
                 <thead>
                     <tr class="text-center">
-                        <th colspan="7">Barang Masuk</th>
+                        <th colspan="8">Barang Masuk</th>
                     </tr>
                     <tr>
                       <th>No</th>
@@ -136,7 +136,7 @@
                       <th>Satuan</th>
                       <th>Pengirim</th>
                       <th>Tanggal Masuk</th>
-                      <th>Tanggal Update</th>
+                      <th>Tanggal Input</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -159,12 +159,12 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Barang</th>
-                        <th>Jumlah Barang</th>
                         <th>Keterangan</th>
+                        <th>Jumlah Barang</th>
                         <th>Satuan</th>
                         <th>Pengirim</th>
                         <th>Tanggal Masuk</th>
-                        <th>Tanggal Update</th>
+                        <th>Tanggal Input</th>
                     </tr>
                     </tfoot>
                 </table>
@@ -199,7 +199,7 @@
                 <table id="" class="table-hover table table-bordered table-striped">
                 <thead>
                     <tr class="text-center">
-                        <th colspan="7">Barang keluar</th>
+                        <th colspan="8">Barang keluar</th>
                     </tr>
                     <tr>
                       <th>No</th>
@@ -209,7 +209,7 @@
                       <th>Satuan</th>
                       <th>Penerima</th>
                       <th>Tanggal Masuk</th>
-                      <th>Tanggal Update</th>
+                      <th>Tanggal Input</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -233,11 +233,11 @@
                         <th>No</th>
                         <th>Nama Barang</th>
                         <th>Keterangan</th>
-                        <th>Satuan</th>
                         <th>Jumlah Barang</th>
+                        <th>Satuan</th>
                         <th>Penerima</th>
                         <th>Tanggal Masuk</th>
-                        <th>Tanggal Update</th>
+                        <th>Tanggal Input</th>
                     </tr>
                     </tfoot>
                 </table>

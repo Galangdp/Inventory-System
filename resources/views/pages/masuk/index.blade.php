@@ -93,9 +93,9 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>Tanggal Update</label>
+                                <label>Tanggal Input</label>
                                     <div class="input-group date" id="reservationdate1" data-target-input="nearest">
-                                        <input name="tanggal_update" type="text" class="form-control datetimepicker-input" data-target="#reservationdate1"/>
+                                        <input name="tanggal_input" type="text" class="form-control datetimepicker-input" data-target="#reservationdate1"/>
                                         <div class="input-group-append" data-target="#reservationdate1" data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i>
                                         </div>
@@ -136,8 +136,8 @@
                     <tr>
                       <th>Nama Barang</th>
                       <th>Keterangan</th>
-                      <th>Satuan</th>
                       <th>Jumlah Barang</th>
+                      <th>Satuan</th>
                       <th>Pengirim</th>
                       <th>Tanggal Masuk</th>
                       <th>Tanggal Update</th>
@@ -153,7 +153,7 @@
                         <td>{{$row -> qty}}</td>
                         <td>{{$row -> pengirim}}</td>
                         <td>{{$row -> tanggal_masuk}}</td>
-                        <td>{{$row -> tanggal_update}}</td>
+                        <td>{{$row -> tanggal_input}}</td>
                         <!-- <td>{{ $row-> created_at -> format('F d, Y') }}</td>
                         <td>{{ $row-> updated_at -> format('F d, Y') }}</td> -->
                         <td>
@@ -176,7 +176,7 @@
                         <th>Satuan</th>
                         <th>Pengirim</th>
                         <th>Tanggal Masuk</th>
-                        <th>Tanggal Update</th>
+                        <th>Tanggal Input</th>
                         <th>Action</th>
                     </tr>
                     </tfoot>

@@ -94,10 +94,10 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label>Tanggal Update</label>
+                            <label>Tanggal Input</label>
                             <div class="input-group date" id="reservationdate1" data-target-input="nearest">
-                                <input name="tanggal_update" type="text" class="form-control datetimepicker-input"
-                                    data-target="#reservationdate1" value="{{$masuk -> tanggal_update}}" />
+                                <input name="tanggal_input" type="text" class="form-control datetimepicker-input"
+                                    data-target="#reservationdate1" value="{{$masuk -> tanggal_input}}" />
                                 <div class="input-group-append" data-target="#reservationdate1"
                                     data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="fa fa-calendar"></i>
