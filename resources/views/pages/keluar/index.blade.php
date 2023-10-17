@@ -82,9 +82,9 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>Tanggal Masuk</label>
+                                <label>Tanggal Keluar</label>
                                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                        <input name="tanggal_masuk" type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                                        <input name="tanggal_keluar" type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
                                         <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                     </div>
@@ -139,7 +139,7 @@
                       <th>Jumlah Barang</th>
                       <th>Satuan</th>
                       <th>Penerima</th>
-                      <th>Tanggal Masuk</th>
+                      <th>Tanggal Keluar</th>
                       <th>Tanggal Input</th>
                       <th>Action</th>
                     </tr>
@@ -152,7 +152,7 @@
                         <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
                         <td>{{$row -> penerima}}</td>
-                        <td>{{$row -> tanggal_masuk}}</td>
+                        <td>{{$row -> tanggal_keluar}}</td>
                         <td>{{$row -> tanggal_input}}</td>
                         <!-- <td>{{ $row-> created_at -> format('F d, Y') }}</td>
                         <td>{{ $row-> updated_at -> format('F d, Y') }}</td> -->
@@ -175,7 +175,7 @@
                         <th>Jumlah Barang</th>
                         <th>Satuan</th>
                         <th>Penerima</th>
-                        <th>Tanggal Masuk</th>
+                        <th>Tanggal Keluar</th>
                         <th>Tanggal Input</th>
                         <th>Action</th>
                     </tr>

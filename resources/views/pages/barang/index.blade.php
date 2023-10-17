@@ -208,7 +208,7 @@
                       <th>Jumlah Barang</th>
                       <th>Satuan</th>
                       <th>Penerima</th>
-                      <th>Tanggal Masuk</th>
+                      <th>Tanggal Keluar</th>
                       <th>Tanggal Input</th>
                     </tr>
                     </thead>
@@ -221,7 +221,7 @@
                         <td>{{$row -> qty}}</td>
                         <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> penerima}}</td>
-                        <td>{{$row -> tanggal_masuk}}</td>
+                        <td>{{$row -> tanggal_keluar}}</td>
                         <td>{{$row -> tanggal_update}}</td>
                         <!-- <td>{{ $row-> created_at -> format('F d, Y') }}</td>
                         <td>{{ $row-> updated_at -> format('F d, Y') }}</td> -->
@@ -236,7 +236,7 @@
                         <th>Jumlah Barang</th>
                         <th>Satuan</th>
                         <th>Penerima</th>
-                        <th>Tanggal Masuk</th>
+                        <th>Tanggal Keluar</th>
                         <th>Tanggal Input</th>
                     </tr>
                     </tfoot>

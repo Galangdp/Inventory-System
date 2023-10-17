@@ -34,9 +34,9 @@
                             <td>{{$keluar -> penerima}}</td>
                         </tr>
                         <tr>
-                            <th>Tanggal Masuk</th>
+                            <th>Tanggal Keluar</th>
                             <td>:</td>
-                            <td>{{$keluar -> tanggal_masuk}}</td>
+                            <td>{{$keluar -> tanggal_keluar}}</td>
                         </tr>
                         <tr>
                             <th>Tanggal Input</th>
