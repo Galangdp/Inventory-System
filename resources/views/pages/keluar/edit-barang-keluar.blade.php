@@ -54,7 +54,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-list-alt"></i></span>
                                                 </div>
-                                                <input name="jumlah_barang" class="form-control" id="jumlah_barang" value="{{$keluar -> jumlah_barang}}">
+                                                <input type="number" name="jumlah_barang" class="form-control" id="jumlah_barang" value="{{$keluar -> jumlah_barang}}">
                                             </div>
                                         </div>
                                     </div>

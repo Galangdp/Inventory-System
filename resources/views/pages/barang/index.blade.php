@@ -218,8 +218,8 @@
                         <td>{{$loop -> iteration}}</td>
                         <td>{{$row -> barang -> nama_barang}}</td>
                         <td>{{$row -> keterangan}}</td>
-                        <td>{{$row -> qty}}</td>
                         <td>{{$row -> jumlah_barang}}</td>
+                        <td>{{$row -> qty}}</td>
                         <td>{{$row -> penerima}}</td>
                         <td>{{$row -> tanggal_keluar}}</td>
                         <td>{{$row -> tanggal_update}}</td>

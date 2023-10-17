@@ -162,9 +162,9 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Tanggal Masuk</label>
-                                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                        <input name="tanggal_masuk" type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
-                                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                    <div class="input-group date" id="reservationdate4" data-target-input="nearest">
+                                        <input name="tanggal_masuk" type="text" class="form-control datetimepicker-input" data-target="#reservationdate4"/>
+                                        <div class="input-group-append" data-target="#reservationdate4" data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                     </div>
                                 </div>
@@ -173,9 +173,9 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Tanggal Update</label>
-                                    <div class="input-group date" id="reservationdate1" data-target-input="nearest">
-                                        <input name="tanggal_update" type="text" class="form-control datetimepicker-input" data-target="#reservationdate1"/>
-                                        <div class="input-group-append" data-target="#reservationdate1" data-toggle="datetimepicker">
+                                    <div class="input-group date" id="reservationdate5" data-target-input="nearest">
+                                        <input name="tanggal_update" type="text" class="form-control datetimepicker-input" data-target="#reservationdate5"/>
+                                        <div class="input-group-append" data-target="#reservationdate5" data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="fa fa-calendar"></i>
                                         </div>
                                     </div>
