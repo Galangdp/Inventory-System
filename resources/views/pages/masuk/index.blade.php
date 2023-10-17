@@ -49,23 +49,23 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="qty">Qty</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-box"></i></span>
-                                    </div>
-                                    <input name="qty" class="form-control" id="qty" placeholder="Qty">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
                                 <label for="jumlah_barang">Jumlah Barang</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-list-alt"></i></i></span>
                                     </div>
-                                    <input name="jumlah_barang" class="form-control" id="jumlah_barang" placeholder="Jumlah Barang">
+                                    <input type="number" name="jumlah_barang" class="form-control" id="jumlah_barang" placeholder="Jumlah Barang">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="qty">Satuan</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-box"></i></span>
+                                    </div>
+                                    <input name="qty" class="form-control" id="qty" placeholder="Satuan">
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                     <tr>
                       <th>Nama Barang</th>
                       <th>Keterangan</th>
-                      <th>Qty</th>
+                      <th>Satuan</th>
                       <th>Jumlah Barang</th>
                       <th>Pengirim</th>
                       <th>Tanggal Masuk</th>
@@ -149,8 +149,8 @@
                       <tr>
                         <td>{{$row -> barang -> nama_barang}}</td>
                         <td>{{$row -> keterangan}}</td>
-                        <td>{{$row -> qty}}</td>
                         <td>{{$row -> jumlah_barang}}</td>
+                        <td>{{$row -> qty}}</td>
                         <td>{{$row -> pengirim}}</td>
                         <td>{{$row -> tanggal_masuk}}</td>
                         <td>{{$row -> tanggal_update}}</td>
@@ -172,8 +172,8 @@
                     <tr>
                         <th>Nama Barang</th>
                         <th>Keterangan</th>
-                        <th>Qty</th>
                         <th>Jumlah Barang</th>
+                        <th>Satuan</th>
                         <th>Pengirim</th>
                         <th>Tanggal Masuk</th>
                         <th>Tanggal Update</th>

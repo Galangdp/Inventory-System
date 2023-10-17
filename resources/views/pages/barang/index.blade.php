@@ -38,12 +38,12 @@
                         <th>Kode Barang</th>
                         <th>Type</th>
                         <th>Brand</th>
-                        <th>Qty</th>
+                        <th>Jumlah Barang</th>
+                        <th>Satuan</th>
                         <th>Price</th>
                         <th>Disc</th>
                         <th>After Disc</th>
                         <th>Total</th>
-                        <th>Jumlah Barang</th>
                         <th>Rak</th>
                         <th>Kondisi</th>
                         <th>Ex Project</th>
@@ -59,12 +59,12 @@
                         <td>{{$row -> kode_barang}}</td>
                         <td>{{$row -> type}}</td>
                         <td>{{$row -> brand}}</td>
+                        <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
                         <td>{{$row -> price}}</td>
                         <td>{{$row -> disc}}</td>
                         <td>{{$row -> after_disc}}</td>
                         <td>{{$row -> total}}</td>
-                        <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> rak}}</td>
                         <td>{{$row -> kondisi}}</td>
                         <td>{{$row -> ex_project}}</td>
@@ -82,12 +82,12 @@
                       <th>Kode Barang</th>
                       <th>Type</th>
                       <th>Brand</th>
-                      <th>Qty</th>
+                      <th>Jumlah Barang</th>
+                      <th>Satuan</th>
                       <th>Price</th>
                       <th>Disc</th>
                       <th>After Disc</th>
                       <th>Total</th>
-                      <th>Jumlah Barang</th>
                       <th>Rak</th>
                       <th>Kondisi</th>
                       <th>Ex Project</th>
@@ -132,8 +132,8 @@
                       <th>No</th>
                       <th>Nama Barang</th>
                       <th>Keterangan</th>
-                      <th>Qty</th>
                       <th>Jumlah Barang</th>
+                      <th>Satuan</th>
                       <th>Pengirim</th>
                       <th>Tanggal Masuk</th>
                       <th>Tanggal Update</th>
@@ -145,8 +145,8 @@
                         <td>{{$loop -> iteration}}</td>
                         <td>{{$row -> barang -> nama_barang}}</td>
                         <td>{{$row -> keterangan}}</td>
-                        <td>{{$row -> qty}}</td>
                         <td>{{$row -> jumlah_barang}}</td>
+                        <td>{{$row -> qty}}</td>
                         <td>{{$row -> pengirim}}</td>
                         <td>{{$row -> tanggal_masuk}}</td>
                         <td>{{$row -> tanggal_update}}</td>
@@ -159,9 +159,9 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Barang</th>
-                        <th>Keterangan</th>
-                        <th>Qty</th>
                         <th>Jumlah Barang</th>
+                        <th>Keterangan</th>
+                        <th>Satuan</th>
                         <th>Pengirim</th>
                         <th>Tanggal Masuk</th>
                         <th>Tanggal Update</th>
@@ -205,8 +205,8 @@
                       <th>No</th>
                       <th>Nama Barang</th>
                       <th>Keterangan</th>
-                      <th>Qty</th>
                       <th>Jumlah Barang</th>
+                      <th>Satuan</th>
                       <th>Penerima</th>
                       <th>Tanggal Masuk</th>
                       <th>Tanggal Update</th>
@@ -233,7 +233,7 @@
                         <th>No</th>
                         <th>Nama Barang</th>
                         <th>Keterangan</th>
-                        <th>Qty</th>
+                        <th>Satuan</th>
                         <th>Jumlah Barang</th>
                         <th>Penerima</th>
                         <th>Tanggal Masuk</th>

@@ -45,10 +45,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="{{ route ('dashboard.index') }}" class="nav-link">Home</a>
       </li>
     </ul>
 
@@ -195,10 +192,10 @@
   @yield('register')
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; 2023 Gudangku.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
+      <b>Version</b> 1.0
     </div>
   </footer>
 
@@ -240,8 +237,6 @@
 <script src="{{ asset('template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('template/dist/js/adminlte.js') }}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('template/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('template/dist/js/pages/dashboard.js') }}"></script>
 <!-- DataTables  & Plugins -->
@@ -294,10 +289,10 @@
 </script>
 <!-- Page Script Discount -->
 <script>
-    // Fungsi ini akan dijalankan setiap kali ada perubahan pada field qty atau discount
+    // Fungsi ini akan dijalankan setiap kali ada perubahan pada field jumlah_barang atau discount
     function calculateTotal() {
-        // Mendapatkan nilai dari field qty, price, dan discount
-        const qty = parseFloat(document.getElementById('qty').value);
+        // Mendapatkan nilai dari field jumlah_barang, price, dan discount
+        const jumlah_barang = parseFloat(document.getElementById('jumlah_barang').value);
         const price = parseFloat(document.getElementById('price').value);
         const discount = parseFloat(document.getElementById('disc').value);
         
@@ -308,7 +303,7 @@
         document.getElementById('after_disc').value = formatCurrency(afterDiscount);
         
         // Menghitung total
-        const total = qty * afterDiscount;
+        const total = jumlah_barang * afterDiscount;
         
         // Mengisi nilai field 'total' dengan total yang dihitung dalam format mata uang IDR
         document.getElementById('total').value = formatCurrency(total);
@@ -319,8 +314,8 @@
         return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(amount);
     }
     
-    // Menambahkan event listener untuk memanggil fungsi calculateTotal saat ada perubahan pada field qty atau discount
-    document.getElementById('qty').addEventListener('input', calculateTotal);
+    // Menambahkan event listener untuk memanggil fungsi calculateTotal saat ada perubahan pada field jumlah_barang atau discount
+    document.getElementById('jumlah_barang').addEventListener('input', calculateTotal);
     document.getElementById('disc').addEventListener('input', calculateTotal);
 </script>
 <!-- Script Date -->

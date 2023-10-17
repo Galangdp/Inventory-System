@@ -19,14 +19,14 @@
                             <td>{{$barang->nama_barang}}</td>
                         </tr>
                         <tr>
-                            <th>Qty</th>
-                            <td>:</td>
-                            <td>{{$masuk -> qty}}</td>
-                        </tr>
-                        <tr>
                             <th>Jumlah Barang</th>
                             <td>:</td>
                             <td>{{$masuk -> jumlah_barang}}</td>
+                        </tr>
+                        <tr>
+                            <th>Satuan</th>
+                            <td>:</td>
+                            <td>{{$masuk -> qty}}</td>
                         </tr>
                         <tr>
                             <th>Penerima</th>

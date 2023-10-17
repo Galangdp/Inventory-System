@@ -34,6 +34,11 @@
                             <td>{{$barang -> brand}}</td>
                         </tr>
                         <tr>
+                            <th>Jumlah Barang</th>
+                            <td>:</td>
+                            <td>{{$barang -> jumlah_barang}}</td>
+                        </tr>
+                        <tr>
                             <th>Qty</th>
                             <td>:</td>
                             <td>{{$barang -> qty}}</td>
@@ -57,11 +62,6 @@
                             <th>Total</th>
                             <td>:</td>
                             <td>{{$barang -> total}}</td>
-                        </tr>
-                        <tr>
-                            <th>Jumlah Barang</th>
-                            <td>:</td>
-                            <td>{{$barang -> jumlah_barang}}</td>
                         </tr>
                         <tr>
                             <th>Rak</th>

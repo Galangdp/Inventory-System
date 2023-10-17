@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('id_barang'); //relasi ruangan sebagai penyimpanan
             $table->string('keterangan');
-            $table->char('qty');
-            $table->char('jumlah_barang')->nullable();
+            $table->integer('jumlah_barang');
+            $table->string('qty');
             $table->string('penerima');
             $table->string('tanggal_masuk')->nullable();
             $table->string('tanggal_update')->nullable();

@@ -47,9 +47,20 @@
                             </select>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="jumlah_barang">Jumlah Barang</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-list-alt"></i></span>
+                                    </div>
+                                  <input type="number" name="jumlah_barang" class="form-control" id="jumlah_barang" value="{{$masuk -> jumlah_barang}}">
+                                </div>
+                          </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="qty">Qty</label>
+                            <label for="qty">Satuan</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-box"></i></span>
@@ -57,17 +68,6 @@
                                 <input name="qty" class="form-control" id="qty" value="{{$masuk -> qty}}">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="qty">Jumlah Barang</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-list-alt"></i></span>
-                                    </div>
-                                  <input name="jumlah_barang" class="form-control" id="jumlah_barang" value="{{$masuk -> jumlah_barang}}">
-                                </div>
-                          </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">

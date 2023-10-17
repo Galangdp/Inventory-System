@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('kode_barang');
             $table->string('type');
             $table->string('brand');
-            $table->char('qty');
+            $table->integer('jumlah_barang');
+            $table->string('qty');
             $table->char('price');
             $table->char('disc')->nullable();
             $table->char('after_disc')->nullable();
             $table->char('total');
-            $table->char('jumlah_barang')->nullable();
             $table->string('rak');
             $table->string('kondisi');
             $table->string('ex_project')->nullable();

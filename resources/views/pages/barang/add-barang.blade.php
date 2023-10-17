@@ -70,14 +70,25 @@
                                 <input name="brand" class="form-control" id="brand" placeholder="Nama Brand">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <div class="form-group">
-                                <label for="qty">Qty</label>
+                                <label for="jumlah_barang">Jumlah Barang</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-list-alt"></i></span>
+                                    </div>
+                                    <input type="number" name="jumlah_barang" class="form-control" id="jumlah_barang" placeholder="Jumlah Barang">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="qty">Satuan</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-box"></i></span>
                                     </div>
-                                    <input name="qty" class="form-control" id="qty" placeholder="Qty">
+                                    <input name="qty" class="form-control" id="qty" placeholder="Satuan">
                                 </div>
                             </div>
                         </div>
@@ -125,18 +136,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="jumlah_barang">Jumlah Barang</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-list-alt"></i></span>
-                                    </div>
-                                    <input name="jumlah_barang" class="form-control" id="jumlah_barang" placeholder="Jumlah Barang">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="rak">Rak</label>
                                 <div class="input-group">
@@ -147,13 +147,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="kondisi">Kondisi</label>
                                 <input name="kondisi" class="form-control" id="kondisi" placeholder="Kondisi">
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="ex_project">Ex Project</label>
                                 <input name="ex_project" class="form-control" id="ex_project" placeholder="Ex Project">
@@ -211,12 +211,12 @@
                       <th>Kode Barang</th>
                       <th>Type</th>
                       <th>Brand</th>
-                      <th>Qty</th>
+                      <th>Jumlah Barang</th>
+                      <th>Satuan</th>
                       <th>Price</th>
                       <th>Disc</th>
                       <th>After Disc</th>
                       <th>Total</th>
-                      <th>Jumlah Barang</th>
                       <th>Rak</th>
                       <th>Kondisi</th>
                       <th>Ex Project</th>
@@ -232,12 +232,12 @@
                         <td>{{$row -> kode_barang}}</td>
                         <td>{{$row -> type}}</td>
                         <td>{{$row -> brand}}</td>
+                        <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
                         <td>{{$row -> price}}</td>
                         <td>{{$row -> disc}}</td>
                         <td>{{$row -> after_disc}}</td>
                         <td>{{$row -> total}}</td>
-                        <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> rak}}</td>
                         <td>{{$row -> kondisi}}</td>
                         <td>{{$row -> ex_project}}</td>
@@ -261,12 +261,12 @@
                       <th>Kode Barang</th>
                       <th>Type</th>
                       <th>Brand</th>
-                      <th>Qty</th>
+                      <th>Jumlah Barang</th>
+                      <th>Satuan</th>
                       <th>Price</th>
                       <th>Disc</th>
                       <th>After Disc</th>
                       <th>Total</th>
-                      <th>Jumlah Barang</th>
                       <th>Rak</th>
                       <th>Kondisi</th>
                       <th>Ex Project</th>
