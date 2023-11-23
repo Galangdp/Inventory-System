@@ -62,7 +62,7 @@
                         <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
                         <td>{{$row -> price}}</td>
-                        <td>{{$row -> disc}}</td>
+                        <td>{{$row -> disc}}%</td>
                         <td>{{$row -> after_disc}}</td>
                         <td>{{$row -> total}}</td>
                         <td>{{$row -> rak}}</td>
