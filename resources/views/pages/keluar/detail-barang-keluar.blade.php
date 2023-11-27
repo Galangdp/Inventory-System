@@ -29,6 +29,11 @@
                             <td>{{$keluar -> qty}}</td>
                         </tr>
                         <tr>
+                            <th>Total</th>
+                            <td>:</td>
+                            <td>{{$keluar -> total}}</td>
+                        </tr>
+                        <tr>
                             <th>Penerima</th>
                             <td>:</td>
                             <td>{{$keluar -> penerima}}</td>

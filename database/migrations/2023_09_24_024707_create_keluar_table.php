@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('keterangan');
             $table->integer('jumlah_barang');
             $table->string('qty');
+            $table->char('total');
             $table->string('penerima');
             $table->string('tanggal_keluar')->nullable();
             $table->string('tanggal_input')->nullable();
 
             $table->foreign('id_barang') -> references('id') -> on('barang') -> onDelete('cascade');
-            
 
             $table->timestamps();
         });

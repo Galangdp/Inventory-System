@@ -36,82 +36,94 @@
                 @csrf
                 <div class="card-body">
                     <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="nama_barang">Nama Barang</label>
-                            <select class="form-control" name="id_barang" id="nama_barang">
-                                <option selected>Choosee...</option>
-                                @foreach($barang as $row)
-                                <option value="{{$row -> id}}">{{$row -> nama_barang}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="jumlah_barang">Jumlah Barang</label>
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <label for="nama_barang">Nama Barang</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-box"></i></span>
+                                  </div>
+                                  <input name="nama_barang" class="form-control" id="nama_barang" value="{{$masuk -> barang -> nama_barang}}">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <label for="jumlah_barang">Jumlah Barang</label>
+                                  <div class="input-group">
+                                      <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="fas fa-list-alt"></i></span>
+                                      </div>
+                                    <input type="number" name="jumlah_barang" class="form-control" id="jumlah_barang" value="{{$masuk -> jumlah_barang}}">
+                                  </div>
+                            </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-group">
+                              <label for="qty">Satuan</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-box"></i></span>
+                                  </div>
+                                  <input name="qty" class="form-control" id="qty" value="{{$masuk -> qty}}">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="total">Total</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-list-alt"></i></span>
+                                        <span class="input-group-text"><i class="fas fa-money-bill-wave-alt"></i></span>
                                     </div>
-                                  <input type="number" name="jumlah_barang" class="form-control" id="jumlah_barang" value="{{$masuk -> jumlah_barang}}">
+                                    <input name="total" class="form-control" id="total" value="{{$masuk -> total}}">
                                 </div>
+                            </div>
+                        </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label for="pengirim">Pengirim</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-box-open"></i></i></span>
+                                  </div>
+                                  <input name="pengirim" class="form-control" id="pengirim" value="{{$masuk -> pengirim}}">
+                              </div>
                           </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="qty">Satuan</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-box"></i></span>
-                                </div>
-                                <input name="qty" class="form-control" id="qty" value="{{$masuk -> qty}}">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="pengirim">Pengirim</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-box-open"></i></i></span>
-                                </div>
-                                <input name="pengirim" class="form-control" id="pengirim" value="{{$masuk -> pengirim}}">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Tanggal Masuk</label>
-                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                <input name="tanggal_masuk" type="text" class="form-control datetimepicker-input"
-                                    data-target="#reservationdate" value="{{$masuk -> tanggal_masuk}}" />
-                                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Tanggal Input</label>
-                            <div class="input-group date" id="reservationdate1" data-target-input="nearest">
-                                <input name="tanggal_input" type="text" class="form-control datetimepicker-input"
-                                    data-target="#reservationdate1" value="{{$masuk -> tanggal_input}}" />
-                                <div class="input-group-append" data-target="#reservationdate1"
-                                    data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="keterangan">Keterangan</label>
-                            <textarea class="form-control" rows="5" name="keterangan"
-                                id="keterangan">{{$masuk -> keterangan}}</textarea>
-                        </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label>Tanggal Masuk</label>
+                              <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                  <input name="tanggal_masuk" type="text" class="form-control datetimepicker-input"
+                                      data-target="#reservationdate" value="{{$masuk -> tanggal_masuk}}" />
+                                  <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="form-group">
+                              <label>Tanggal Input</label>
+                              <div class="input-group date" id="reservationdate1" data-target-input="nearest">
+                                  <input name="tanggal_input" type="text" class="form-control datetimepicker-input"
+                                      data-target="#reservationdate1" value="{{$masuk -> tanggal_input}}" />
+                                  <div class="input-group-append" data-target="#reservationdate1"
+                                      data-toggle="datetimepicker">
+                                      <div class="input-group-text"><i class="fa fa-calendar"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label for="keterangan">Keterangan</label>
+                              <textarea class="form-control" rows="5" name="keterangan"
+                                  id="keterangan">{{$masuk -> keterangan}}</textarea>
+                          </div>
+                      </div>
                     </div>
                 </div>
                 <!-- /.card-body -->

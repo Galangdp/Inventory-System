@@ -36,18 +36,18 @@
                             @csrf
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="nama_barang">Nama Barang</label>
-                                            <select class="form-control" name="id_barang" id="nama_barang">
-                                                <option selected>Choosee...</option>
-                                                @foreach($barang as $row)
-                                                <option value="{{$row -> id}}">{{$row -> nama_barang}}</option>
-                                                @endforeach
-                                            </select>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-box"></i></span>
+                                                </div>
+                                                <input name="nama_barang" class="form-control" id="nama_barang" value="{{$keluar -> barang -> nama_barang}}">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="jumlah_barang">Jumlah Barang</label>
                                             <div class="input-group">
@@ -58,7 +58,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="qty">Satuan</label>
                                             <div class="input-group">
@@ -66,6 +66,17 @@
                                                     <span class="input-group-text"><i class="fas fa-box"></i></span>
                                                 </div>
                                                 <input name="qty" class="form-control" id="qty" value="{{$keluar -> qty}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="total">Total</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-money-bill-wave-alt"></i></span>
+                                                </div>
+                                                <input name="total" class="form-control" id="total" value="{{$keluar -> total}}">
                                             </div>
                                         </div>
                                     </div>

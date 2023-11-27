@@ -21,17 +21,81 @@ class MasukController extends Controller
         return view('pages.masuk.index', $data);
     }
 
+    // public function create(Request $request){
+    //     $masuk = $request->all();
+
+    //     // Tambahkan jumlah_barang di tabel Barang saat barang masuk
+    //     $barang = Barang::find($masuk['id_barang']);
+    //     $barang->jumlah_barang += $masuk['jumlah_barang'];
+    //     $barang->save();
+        
+    //     Masuk::create($masuk);
+    //     return redirect() -> route('barang.index');
+    // }
+
     public function create(Request $request){
         $masuk = $request->all();
 
         // Tambahkan jumlah_barang di tabel Barang saat barang masuk
         $barang = Barang::find($masuk['id_barang']);
-        $barang->jumlah_barang += $masuk['jumlah_barang'];
+        $totalBarang = $barang->jumlah_barang += $masuk['jumlah_barang'];
+        $total = $barang->jumlah_barang += $masuk['jumlah_barang'];
+
+        // $this->convertCurrencyToInteger($totalBarang);
+        
+        $total = $totalBarang  *= $barang->after_disc;
+
+        $barang->total = "Rp " . number_format($total,2,',','.');
         $barang->save();
         
         Masuk::create($masuk);
         return redirect() -> route('barang.index');
     }
+    
+//     public function create(Request $request)
+// {
+//     // $masuk = $request->all();
+
+//     // // Tambahkan jumlah_barang di tabel Barang saat barang masuk
+//     // $barang = Barang::find($masuk['id_barang']);
+//     // $barang->jumlah_barang += $masuk['jumlah_barang'];
+
+//     // // Konversi string total ke integer
+//     // $totalMasuk = $this->convertCurrencyToInteger($masuk['total']);
+
+//     // // Simpan total barang yang sudah diupdate
+//     // $barang->total += "Rp " . number_format($totalMasuk,2,',','.');
+//     // $barang->save();
+
+//     // // Simpan data masuk
+//     // Masuk::create($masuk);
+    
+//     // return redirect()->route('barang.index');
+
+//     // $masuk = $request->all();
+
+//     // // Tambahkan jumlah_barang di tabel Barang saat barang masuk
+//     // $barang = Barang::find($masuk['id_barang']);
+//     // $barang->jumlah_barang += $masuk['jumlah_barang'];
+
+//     // // Konversi string total ke integer
+//     // $totalMasuk = $this->convertCurrencyToInteger($masuk['total']);
+    
+//     // // Ambil total barang dan konversi ke integer jika belum
+//     // $totalBarang = $barang->total;
+
+//     // // Tambahkan total masuk ke total barang
+//     // $totalBarang += $totalMasuk;
+
+//     // // Simpan total barang yang sudah diupdate
+//     // $barang->total = $totalBarang;
+//     // $barang->save();
+
+//     // // Simpan data masuk
+//     // Masuk::create($masuk);
+    
+//     // return redirect()->route('barang.index');
+// }
     
     public function edit_view($id){
         $masuk = Masuk::find($id);

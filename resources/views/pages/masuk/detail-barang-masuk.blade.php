@@ -29,6 +29,11 @@
                             <td>{{$masuk -> qty}}</td>
                         </tr>
                         <tr>
+                            <th>Total</th>
+                            <td>:</td>
+                            <td>{{$masuk -> total}}</td>
+                        </tr>
+                        <tr>
                             <th>Penerima</th>
                             <td>:</td>
                             <td>{{$masuk -> penerima}}</td>

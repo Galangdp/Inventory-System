@@ -190,6 +190,7 @@
   @yield('detail-barang-keluar')
   @yield('edit-barang-keluar')
   @yield('register')
+  @yield('project')
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2023 Gudangku.</strong>
@@ -288,6 +289,33 @@
   });
 </script>
 <!-- Page Script Discount -->
+<!-- <script>
+  function calculateTotalMasukKeluar() {
+        // Mendapatkan nilai dari field jumlah_barang, price, dan discount
+        const jumlah_barang_masuk_keluar = parseFloat(document.getElementById('jumlah_barang_masuk_keluar').value);
+        const after_disc_masuk_keluar = parseFloat(document.getElementById('after_disc_masuk_keluar').value);
+
+        // const price = parseFloat(document.getElementById('price').value);
+        // const discount = parseFloat(document.getElementById('disc').value);
+        
+        // Menghitung harga setelah diskon
+        // const afterDiscount = price - (price * (discount / 100));
+        
+        // Mengisi nilai field 'after_disc' dengan harga setelah diskon dalam format mata uang IDR
+        // document.getElementById('after_disc').value = formatCurrency(afterDiscount);
+        
+        // Menghitung total
+        const total = jumlah_barang_masuk_keluar * after_disc_masuk_keluar;
+        
+        // Mengisi nilai field 'total' dengan total yang dihitung dalam format mata uang IDR
+        document.getElementById('total_masuk_keluar').value = formatCurrencyMasukKeluar(total);
+    }
+
+    function formatCurrencyMasukKeluar(amount) {
+        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(amount);
+    }
+    
+</script> -->
 <script>
     // Fungsi ini akan dijalankan setiap kali ada perubahan pada field jumlah_barang atau discount
     function calculateTotal() {

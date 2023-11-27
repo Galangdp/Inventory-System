@@ -6,6 +6,7 @@ use App\Http\Controllers\MasukController;
 use App\Http\Controllers\KeluarController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProjectController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -145,6 +146,10 @@ Route::middleware(['auth', 'role:admin,pic'])->group(function(){
 
     Route::name('dashboard.')->group(function () {
         Route::get('/',[DashboardController::class, 'index'])->name('index');
+    });
+
+    Route::name('project.')->group(function () {
+        Route::get('/project', [ProjectController::class, 'index'])->name('index');
     });
 
 });

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('keterangan');
             $table->integer('jumlah_barang');
             $table->string('qty');
+            $table->char('total');
             $table->string('pengirim');
             $table->string('tanggal_masuk')->nullable();
             $table->string('tanggal_input')->nullable();

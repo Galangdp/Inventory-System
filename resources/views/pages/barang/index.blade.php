@@ -48,7 +48,7 @@
                         <th>Kondisi</th>
                         <th>Ex Project</th>
                         <th>Tanggal Masuk</th>
-                        <th>Tanggal Input</th>
+                        <th>Tanggal Update</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -59,12 +59,12 @@
                         <td>{{$row -> kode_barang}}</td>
                         <td>{{$row -> type}}</td>
                         <td>{{$row -> brand}}</td>
-                        <td>{{$row -> jumlah_barang}}</td>
+                        <td id="jumlah_barang_masuk_keluar">{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
                         <td>{{$row -> price}}</td>
                         <td>{{$row -> disc}}%</td>
-                        <td>{{$row -> after_disc}}</td>
-                        <td>{{$row -> total}}</td>
+                        <td id="after_disc_masuk_keluar">{{$row -> after_disc}}</td>
+                        <td id="total_masuk_keluar">{{$row -> total}}</td>
                         <td>{{$row -> rak}}</td>
                         <td>{{$row -> kondisi}}</td>
                         <td>{{$row -> ex_project}}</td>
@@ -92,7 +92,7 @@
                       <th>Kondisi</th>
                       <th>Ex Project</th>
                       <th>Tanggal Masuk</th>
-                      <th>Tanggal Input</th>
+                      <th>Tanggal Update</th>
                     </tr>
                     </tfoot>
                   </table>
@@ -126,7 +126,7 @@
                 <table id="" class="table-hover table table-bordered table-striped">
                 <thead>
                     <tr class="text-center">
-                        <th colspan="8">Barang Masuk</th>
+                        <th colspan="9">Barang Masuk</th>
                     </tr>
                     <tr>
                       <th>No</th>
@@ -134,6 +134,7 @@
                       <th>Keterangan</th>
                       <th>Jumlah Barang</th>
                       <th>Satuan</th>
+                      <th>Total</th>
                       <th>Pengirim</th>
                       <th>Tanggal Masuk</th>
                       <th>Tanggal Input</th>
@@ -147,9 +148,10 @@
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
+                        <td>{{$row -> total}}</td>
                         <td>{{$row -> pengirim}}</td>
                         <td>{{$row -> tanggal_masuk}}</td>
-                        <td>{{$row -> tanggal_update}}</td>
+                        <td>{{$row -> tanggal_input}}</td>
                         <!-- <td>{{ $row-> created_at -> format('F d, Y') }}</td>
                         <td>{{ $row-> updated_at -> format('F d, Y') }}</td> -->
                       </tr>
@@ -162,6 +164,7 @@
                         <th>Keterangan</th>
                         <th>Jumlah Barang</th>
                         <th>Satuan</th>
+                        <th>Total</th>
                         <th>Pengirim</th>
                         <th>Tanggal Masuk</th>
                         <th>Tanggal Input</th>
@@ -199,7 +202,7 @@
                 <table id="" class="table-hover table table-bordered table-striped">
                 <thead>
                     <tr class="text-center">
-                        <th colspan="8">Barang keluar</th>
+                        <th colspan="9">Barang keluar</th>
                     </tr>
                     <tr>
                       <th>No</th>
@@ -207,6 +210,7 @@
                       <th>Keterangan</th>
                       <th>Jumlah Barang</th>
                       <th>Satuan</th>
+                      <th>Total</th>
                       <th>Penerima</th>
                       <th>Tanggal Keluar</th>
                       <th>Tanggal Input</th>
@@ -220,9 +224,10 @@
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
+                        <td>{{$row -> total}}</td>
                         <td>{{$row -> penerima}}</td>
                         <td>{{$row -> tanggal_keluar}}</td>
-                        <td>{{$row -> tanggal_update}}</td>
+                        <td>{{$row -> tanggal_input}}</td>
                         <!-- <td>{{ $row-> created_at -> format('F d, Y') }}</td>
                         <td>{{ $row-> updated_at -> format('F d, Y') }}</td> -->
                       </tr>
@@ -235,6 +240,7 @@
                         <th>Keterangan</th>
                         <th>Jumlah Barang</th>
                         <th>Satuan</th>
+                        <th>Total</th>
                         <th>Penerima</th>
                         <th>Tanggal Keluar</th>
                         <th>Tanggal Input</th>

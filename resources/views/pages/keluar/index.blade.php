@@ -32,11 +32,11 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{ route ('keluar.create') }}" method="POST">
+              <form action="{{ route ('keluar.create') }}" method="POST" id="form-barang-keluar" >
                 @csrf
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="nama_barang">Nama Barang</label>
                                 <select class="form-control" name="id_barang" id="nama_barang">
@@ -47,7 +47,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="jumlah_barang">Jumlah Barang</label>
                                 <div class="input-group">
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="qty">Satuan</label>
                                 <div class="input-group">
@@ -66,6 +66,17 @@
                                         <span class="input-group-text"><i class="fas fa-box"></i></span>
                                     </div>
                                     <input name="qty" class="form-control" id="qty" placeholder="Satuan">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="total">Total</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-money-bill-wave-alt"></i></span>
+                                    </div>
+                                    <input name="total" class="form-control" id="total" placeholder="Total">
                                 </div>
                             </div>
                         </div>
