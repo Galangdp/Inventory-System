@@ -121,7 +121,10 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-tags"></i></span>
                                     </div>
-                                    <input name="after_disc" class="form-control" id="after_disc" placeholder="After Disc">
+                                    <input class="form-control" id="after_disc_display" placeholder="After Disc">
+                                    <input hidden name="after_disc" class="form-control" id="after_disc" placeholder="After Disc">
+                                    <!-- <input name="after_disc" id="after_disc" class="form-control" placeholder="After Disc"> -->
+
                                 </div>
                             </div>
                         </div>
@@ -132,7 +135,9 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-money-bill-wave-alt"></i></span>
                                     </div>
-                                    <input name="total" class="form-control" id="total" placeholder="Total">
+                                    <input class="form-control" id="totalDisplay" placeholder="Total">
+                                    <input name="total" id="total" class="form-control" hidden>
+                                    <!-- <input name="total" class="form-control" id="total" placeholder="Total"> -->
                                 </div>
                             </div>
                         </div>
@@ -234,46 +239,51 @@
                         <td>{{$row -> brand}}</td>
                         <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
-                        <td>{{$row -> price}}</td>
-                        <td>{{$row -> disc}}</td>
-                        <td>{{$row -> after_disc}}</td>
-                        <td>{{$row -> total}}</td>
+                        <td>Rp. {{ number_format($row -> price , 2, ',', '.') }}</td>
+                        <td>{{$row -> disc}}%</td>
+                        <!-- <td>{{$row -> after_disc}}</td> -->
+                        <td>Rp. {{ number_format($row -> after_disc , 2, ',', '.') }}</td>
+                        <td>Rp {{ number_format($row -> jumlah_barang * $row -> after_disc , 2, ',', '.') }}</td>
                         <td>{{$row -> rak}}</td>
                         <td>{{$row -> kondisi}}</td>
                         <td>{{$row -> ex_project}}</td>
                         <td>{{ $row -> tanggal_masuk }}</td>
                         <td>{{ $row-> tanggal_update }}</td>
                         <td>
-                        <form action="{{route('barang.delete', $row->id)}}" method="POST" onsubmit="return confirm('Yakin Menghapus?')" method="post">
-                          @csrf
-                          {{method_field('DELETE')}}
-                          <a href="{{route('barang.detail', $row->id)}}" type="button" class="btn btn-block btn-primary">Detail</a>
-                          <a href="{{route('barang.edit_view', $row->id)}}" type="button" class="btn btn-block btn-warning">Edit</a>
-                          <button type="sumbit" class="btn btn-block btn-danger">Delete</button>
-                        </form>
+                            @if(auth()->user()->role == 'admin' || auth()->user()->role == 'pic')
+                            <form action="{{route('barang.delete', $row->id)}}" method="POST" onsubmit="return confirm('Yakin Menghapus?')" method="post">
+                            @csrf
+                            {{method_field('DELETE')}}
+                            <a href="{{route('barang.detail', $row->id)}}" type="button" class="btn btn-block btn-primary">Detail</a>
+                            <a href="{{route('barang.edit_view', $row->id)}}" type="button" class="btn btn-block btn-warning">Edit</a>
+                            <button type="sumbit" class="btn btn-block btn-danger">Delete</button>
+                            </form>
+                            @else
+                            <a href="{{route('barang.detail', $row->id)}}" type="button" class="btn btn-block btn-primary">Detail</a>
+                            @endif
                         </td>
-                      </tr>
-                      @endforeach
-                    </tbody>
+                    </tr>
+                    @endforeach
+                </tbody>
                     <tfoot>
                     <tr>
-                      <th>Nama Barang</th>
-                      <th>Kode Barang</th>
-                      <th>Type</th>
-                      <th>Brand</th>
-                      <th>Jumlah Barang</th>
-                      <th>Satuan</th>
-                      <th>Price</th>
-                      <th>Disc</th>
-                      <th>After Disc</th>
-                      <th>Total</th>
-                      <th>Rak</th>
-                      <th>Kondisi</th>
-                      <th>Ex Project</th>
-                      <th>Tanggal Masuk</th>
-                      <th>Tanggal Update</th>
-                      <th>Action</th>
-                    </tr>
+                            <th>Nama Barang</th>
+                            <th>Kode Barang</th>
+                            <th>Type</th>
+                            <th>Brand</th>
+                            <th>Jumlah Barang</th>
+                            <th>Satuan</th>
+                            <th>Price</th>
+                            <th>Disc</th>
+                            <th>After Disc</th>
+                            <th>Total</th>
+                            <th>Rak</th>
+                            <th>Kondisi</th>
+                            <th>Ex Project</th>
+                            <th>Tanggal Masuk</th>
+                            <th>Tanggal Update</th>
+                            <th>Action</th>
+                        </tr>
                     </tfoot>
                 </table>
               </div>

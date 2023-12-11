@@ -27,6 +27,7 @@ class KeluarController extends Controller
         // Kurangi jumlah_barang di tabel Barang saat barang keluar
         $barang = Barang::find($keluar['id_barang']);
         $barang->jumlah_barang -= $keluar['jumlah_barang'];
+        $barang->total += $keluar['total'];
         $barang->save();
 
         Keluar::create($keluar);

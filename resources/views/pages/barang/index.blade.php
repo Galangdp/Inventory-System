@@ -59,12 +59,20 @@
                         <td>{{$row -> kode_barang}}</td>
                         <td>{{$row -> type}}</td>
                         <td>{{$row -> brand}}</td>
-                        <td id="jumlah_barang_masuk_keluar">{{$row -> jumlah_barang}}</td>
+                        <td>{{$row -> jumlah_barang}}</td>
+                        <!-- <td id="jumlah_barang_masuk_keluar">{{$row -> jumlah_barang}}</td> -->
                         <td>{{$row -> qty}}</td>
-                        <td>{{$row -> price}}</td>
+                        <!-- <td>{{$row -> price}}</td> -->
+                        <td>Rp. {{ number_format($row -> price , 2, ',', '.') }}</td>
                         <td>{{$row -> disc}}%</td>
-                        <td id="after_disc_masuk_keluar">{{$row -> after_disc}}</td>
-                        <td id="total_masuk_keluar">{{$row -> total}}</td>
+                        <!-- <td>{{$row -> after_disc}}</td> -->
+                        <td>Rp. {{ number_format($row -> after_disc , 2, ',', '.') }}</td>
+                        <!-- <td id="after_disc_masuk_keluar">{{$row -> after_disc}}</td> -->
+                        <!-- <input id="totalTable" value="{{$row -> total}}"> -->
+                        <!-- <td><p id="totalTable1"></p></td> -->
+                        <!-- <td id="totalTable1"></td> -->
+                        <td>Rp {{ number_format($row -> jumlah_barang * $row -> after_disc , 2, ',', '.') }}</td>
+                        <!-- <td id="total_masuk_keluar">{{$row -> total}}</td> -->
                         <td>{{$row -> rak}}</td>
                         <td>{{$row -> kondisi}}</td>
                         <td>{{$row -> ex_project}}</td>
@@ -148,7 +156,8 @@
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
-                        <td>{{$row -> total}}</td>
+                        <!-- <td>{{$row -> total}}</td> -->
+                        <td>Rp {{ number_format($row -> total , 2, ',', '.') }}</td>
                         <td>{{$row -> pengirim}}</td>
                         <td>{{$row -> tanggal_masuk}}</td>
                         <td>{{$row -> tanggal_input}}</td>
@@ -224,7 +233,8 @@
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
-                        <td>{{$row -> total}}</td>
+                        <!-- <td>{{$row -> total}}</td> -->
+                        <td>Rp {{ number_format($row -> total , 2, ',', '.') }}</td>
                         <td>{{$row -> penerima}}</td>
                         <td>{{$row -> tanggal_keluar}}</td>
                         <td>{{$row -> tanggal_input}}</td>

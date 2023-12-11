@@ -149,6 +149,7 @@
                       <th>Keterangan</th>
                       <th>Jumlah Barang</th>
                       <th>Satuan</th>
+                      <th>Total</th>
                       <th>Pengirim</th>
                       <th>Tanggal Masuk</th>
                       <th>Tanggal Update</th>
@@ -162,19 +163,24 @@
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
+                        <td>Rp. {{ number_format($row -> total , 2, ',', '.') }}</td>
                         <td>{{$row -> pengirim}}</td>
                         <td>{{$row -> tanggal_masuk}}</td>
                         <td>{{$row -> tanggal_input}}</td>
                         <!-- <td>{{ $row-> created_at -> format('F d, Y') }}</td>
                         <td>{{ $row-> updated_at -> format('F d, Y') }}</td> -->
                         <td>
+                        @if(auth()->user()->role == 'admin' || auth()->user()->role == 'pic')
                           <form action="{{route('masuk.delete', $row->id)}}" method="POST" onsubmit="return confirm('Yakin Menghapus?')" method="post">
                             @csrf
                             {{method_field('DELETE')}}
                             <a href="{{route('masuk.detail', $row->id)}}" type="button" class="btn btn-block btn-primary">Detail</a>
-                            <a href="{{route('masuk.edit_view', $row->id)}}" type="button" class="btn btn-block btn-warning">Edit</a>
+                            <a href="{{route('masuk.edit_view', $row->id)}}" type="button"class="btn btn-block btn-warning">Edit</a>
                             <button type="sumbit" class="btn btn-block btn-danger">Delete</button>
                           </form>
+                          @else
+                          <a href="{{route('masuk.detail', $row->id)}}" type="button" class="btn btn-block btn-primary">Detail</a>
+                          @endif
                         </td>
                       </tr>
                       @endforeach
@@ -185,6 +191,7 @@
                         <th>Keterangan</th>
                         <th>Jumlah Barang</th>
                         <th>Satuan</th>
+                        <th>Total</th>
                         <th>Pengirim</th>
                         <th>Tanggal Masuk</th>
                         <th>Tanggal Input</th>

@@ -111,13 +111,38 @@ Route::name('auth.')->group(function (){
     Route::post('/logout',[AuthController::class, 'logout'])->name('logout');
 });
 
-Route::middleware(['auth', 'role:admin,pic'])->group(function(){
+Route::middleware(['auth', 'role:admin,pic,user'])->group(function(){
     
     Route::name('barang.')->group(function () {
         Route::get('/stock-barang',[BarangController::class, 'index'])->name('index');
         Route::get('/add-barang-view',[BarangController::class, 'add_view'])->name('add_view');
+        Route::get('/detail-barang/{id}',[BarangController::class, 'detail'])->name('detail');;
+    });
+
+    Route::name('masuk.')->group(function () {
+        Route::get('/barang-masuk-view',[MasukController::class, 'index'])->name('index');
+        Route::get('/detail-barang-masuk/{id}',[MasukController::class, 'detail'])->name('detail');
+    });
+
+    Route::name('keluar.')->group(function () {
+        Route::get('/barang-keluar-view',[KeluarController::class, 'index'])->name('index');
+        Route::get('/detail-barang-keluar/{id}',[KeluarController::class, 'detail'])->name('detail');
+    });
+
+    Route::name('dashboard.')->group(function () {
+        Route::get('/',[DashboardController::class, 'index'])->name('index');
+    });
+
+    Route::name('project.')->group(function () {
+        Route::get('/project', [ProjectController::class, 'index'])->name('index');
+    });
+
+});
+
+Route::middleware(['auth', 'role:admin,pic'])->group(function(){
+    
+    Route::name('barang.')->group(function () {
         Route::post('/add-barang',[BarangController::class, 'create'])->name('create');
-        Route::get('/detail-barang/{id}',[BarangController::class, 'detail'])->name('detail');
         Route::get('/edit-barang/{id}',[BarangController::class, 'edit_view'])->name('edit_view');
         Route::post('/update-barang/{id}',[BarangController::class, 'update'])->name('update');
         Route::delete('/delete-barang/{id}',[BarangController::class, 'delete'])->name('delete');
@@ -127,18 +152,14 @@ Route::middleware(['auth', 'role:admin,pic'])->group(function(){
     });
 
     Route::name('masuk.')->group(function () {
-        Route::get('/barang-masuk-view',[MasukController::class, 'index'])->name('index');
         Route::post('/barang-masuk',[MasukController::class, 'create'])->name('create');
-        Route::get('/detail-barang-masuk/{id}',[MasukController::class, 'detail'])->name('detail');
         Route::get('/edit-barang-masuk/{id}',[MasukController::class, 'edit_view'])->name('edit_view');
         Route::post('/update-barang-masuk/{id}',[MasukController::class, 'update'])->name('update');
         Route::delete('/delete-barang-masuk/{id}',[MasukController::class, 'delete'])->name('delete');
     });
 
     Route::name('keluar.')->group(function () {
-        Route::get('/barang-keluar-view',[KeluarController::class, 'index'])->name('index');
         Route::post('/barang-keluar',[KeluarController::class, 'create'])->name('create');
-        Route::get('/detail-barang-keluar/{id}',[KeluarController::class, 'detail'])->name('detail');
         Route::get('/edit-barang-keluar/{id}',[KeluarController::class, 'edit_view'])->name('edit_view');
         Route::post('/update-barang-keluar/{id}',[KeluarController::class, 'update'])->name('update');
         Route::delete('/delete-barang-keluar/{id}',[KeluarController::class, 'delete'])->name('delete');

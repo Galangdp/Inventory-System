@@ -328,23 +328,52 @@
         const afterDiscount = price - (price * (discount / 100));
         
         // Mengisi nilai field 'after_disc' dengan harga setelah diskon dalam format mata uang IDR
-        document.getElementById('after_disc').value = formatCurrency(afterDiscount);
+        document.getElementById('after_disc').value = afterDiscount;
+        document.getElementById('after_disc_display').value = formatCurrency(afterDiscount);
+
+        // document.getElementById('after_disc').value = formatCurrency(afterDiscount);;
         
         // Menghitung total
         const total = jumlah_barang * afterDiscount;
+        // const replace = document.getElementById('totalTable').value;
         
         // Mengisi nilai field 'total' dengan total yang dihitung dalam format mata uang IDR
-        document.getElementById('total').value = formatCurrency(total);
+        // document.getElementById('total').value = formatCurrency(total);
+// 
+        document.getElementById('total').value = total;
+        document.getElementById('totalDisplay').value = formatCurrency(total);
+        // document.getElementById('totalTable').value = formatCurrency(total);
+        // document.getElementById('totalCell').value = formatCurrency(total);
     }
 
     // Fungsi untuk mengubah angka menjadi format mata uang IDR atau RP
     function formatCurrency(amount) {
         return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(amount);
     }
+
+    // function total(){
+    //   const jumlah_barang = parseFloat(document.getElementById('jumlah_barang').value);
+    //   const price = parseFloat(document.getElementById('price').value);
+    //   const discount = parseFloat(document.getElementById('disc').value);
+        
+    //     // Menghitung harga setelah diskon
+    //   const afterDiscount = price - (price * (discount / 100));
+    //   const total = jumlah_barang * afterDiscount;
+
+    //   // Menambahkan baris ini untuk mengganti teks di dalam elemen dengan ID 'totalCell'
+    //   // console.log(total); 
+    //   document.getElementById('totalCell').innerText = formatCurrency(total);
+    // }
     
     // Menambahkan event listener untuk memanggil fungsi calculateTotal saat ada perubahan pada field jumlah_barang atau discount
     document.getElementById('jumlah_barang').addEventListener('input', calculateTotal);
     document.getElementById('disc').addEventListener('input', calculateTotal);
+    // document.getElementById('totalCell').addEventListener('td', calculateTotal);
+    // document.getElementById('totalTable1').value = formatCurrency(total);
+    // document.getElementById('totalTable1').addEventListener('td', calculateTotal);
+    // document.getElementById('totalTable1').innerText = replace;
+    // document.getElementById('totalCell').innerText = formatCurrency(total);
+    // document.getElementById('totalCell').addEventListener('td', total);
 </script>
 <!-- Script Date Masuk -->
 <script>

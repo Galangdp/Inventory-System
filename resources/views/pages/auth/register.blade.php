@@ -49,7 +49,10 @@
                   </div>
                   <div class="form-group">
                         <label>Role</label>
-                        <input type="text" class="form-control" name="role" value="PIC" disabled>
+                        <select name="role" class="form-control">
+                          <option>PIC</option>
+                          <option>USER</option>
+                        </select>
                       </div>
                 </div>
                 <!-- /.card-body -->

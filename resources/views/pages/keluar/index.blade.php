@@ -149,6 +149,7 @@
                       <th>Keterangan</th>
                       <th>Jumlah Barang</th>
                       <th>Satuan</th>
+                      <th>Total</th>
                       <th>Penerima</th>
                       <th>Tanggal Keluar</th>
                       <th>Tanggal Input</th>
@@ -162,12 +163,14 @@
                         <td>{{$row -> keterangan}}</td>
                         <td>{{$row -> jumlah_barang}}</td>
                         <td>{{$row -> qty}}</td>
+                        <td>Rp. {{ number_format($row -> total , 2, ',', '.') }}</td>
                         <td>{{$row -> penerima}}</td>
                         <td>{{$row -> tanggal_keluar}}</td>
                         <td>{{$row -> tanggal_input}}</td>
                         <!-- <td>{{ $row-> created_at -> format('F d, Y') }}</td>
                         <td>{{ $row-> updated_at -> format('F d, Y') }}</td> -->
                         <td>
+                          @if(auth()->user()->role == 'admin' || auth()->user()->role == 'pic')
                           <form action="{{route('keluar.delete', $row->id)}}" method="POST" onsubmit="return confirm('Yakin Menghapus?')" method="post">
                             @csrf
                             {{method_field('DELETE')}}
@@ -175,6 +178,9 @@
                             <a href="{{route('keluar.edit_view', $row->id)}}" type="button" class="btn btn-block btn-warning">Edit</a>
                             <button type="sumbit" class="btn btn-block btn-danger">Delete</button>
                           </form>
+                          @else
+                          <a href="{{route('keluar.detail', $row->id)}}" type="button" class="btn btn-block btn-primary">Detail</a>
+                          @endif
                         </td>
                       </tr>
                       @endforeach
@@ -185,6 +191,7 @@
                         <th>Keterangan</th>
                         <th>Jumlah Barang</th>
                         <th>Satuan</th>
+                        <th>Total</th>
                         <th>Penerima</th>
                         <th>Tanggal Keluar</th>
                         <th>Tanggal Input</th>
